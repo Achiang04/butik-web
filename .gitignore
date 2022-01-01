@@ -33,5 +33,9 @@ yarn-error.log*
 # vercel
 .vercel
 
-# typescript
-*.tsbuildinfo
+dist
+compiled-lang
+.husky
+
+# static folder for DigitalOcean App Platform
+_static

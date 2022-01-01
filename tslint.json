@@ -1,0 +1,14 @@
+{
+    "defaultSeverity": "error",
+    "extends": ["tslint:recommended"],
+    "jsRules": {},
+    "rules": {
+        "no-trailing-whitespace": true,
+        "prefer-const": [true, { "destructuring": "any" }],
+        "semicolon": [true, "always"],
+        "space-before-function-parent": [true, "never"],
+        "simple-import-sort/imports": [true, "always"],
+        "simple-import-sort/exports": [true, "always"]
+    },
+    "rulesDirectory": []
+}

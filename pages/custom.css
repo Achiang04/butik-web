@@ -1,0 +1,61 @@
+body {
+    font-size: 1vw;
+}
+
+.absolute-center {
+    @apply top-1/2 left-1/2;
+    transform: translate(-50%, -50%);
+}
+
+.absolute-x-center {
+    @apply left-1/2;
+    transform: translateX(-50%);
+}
+
+.absolute-y-center {
+    @apply top-1/2;
+    transform: translateY(-50%);
+}
+
+.rotate-card {
+    transform: rotate(180deg);
+}
+
+.glow {
+    box-shadow: 0 0 2px #fff, 0 0 10px #fff, 0 0 20px #0ba9ca;
+}
+
+.content-container {
+    height: calc(100% - 5rem);
+}
+
+form {
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+form#registerform {
+    margin-top: -100%;
+}
+
+.btn-social {
+    @apply flex items-center text-white justify-center mt-4 md:mt-0 w-full px-4 py-2;
+}
+
+.btn-social.facebook {
+    @apply bg-blue-500 hover:bg-blue-600;
+}
+
+.btn-social.google {
+    @apply bg-red-500 hover:bg-red-600;
+}
+
+.popover-card {
+    @apply opacity-100 p-5 shadow-xl !important;
+    border-radius: 3rem !important;
+}
+
+.popover-pastEvent-card {
+    @apply opacity-100 p-5 mt-12 shadow-xl !important;
+    border-radius: 3rem !important;
+}

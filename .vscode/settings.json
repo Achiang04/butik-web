@@ -1,0 +1,14 @@
+{
+    "compile-hero.disable-compile-files-on-did-save-code": true,
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    },
+    "eslint.validate": [
+        "javascript",
+        "json",
+        {
+            "language": "typescript",
+            "autoFix": true
+        }
+    ]
+}
