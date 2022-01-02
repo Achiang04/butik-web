@@ -32,6 +32,15 @@ module.exports = {
             sans: ['Raleway', 'sans-serif']
         },
         extend: {
+            colors: {
+                purple: '#7367f0',
+                violet: '#7E33E0',
+                softGray: '#9096B2',
+                borderGray: '#C2C5E1',
+                pink: '#FB2E86',
+                textWhite: '#F1F1F1',
+                textBlack: '#0D0E43'
+            },
             width: {
                 '5p': '5%',
                 '10p': '10%',
@@ -136,6 +145,7 @@ module.exports = {
                 72: '18rem',
                 80: '20rem',
                 96: '24rem',
+                110: '27rem',
                 120: '30rem',
                 140: '35rem',
                 160: '40rem',

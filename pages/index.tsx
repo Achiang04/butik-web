@@ -7,14 +7,14 @@ import React, { useEffect } from 'react';
 export interface Props {}
 
 const Home = () => {
-    // const [session]: [any, boolean] = useSession();
-    // const router = useRouter();
+    const [session]: [any, boolean] = useSession();
+    const router = useRouter();
 
-    // useEffect(() => {
-    //     if (session) {
-    //         router.push(`/dashboard`);
-    //     }
-    // }, [session]);
+    useEffect(() => {
+        if (session) {
+            router.push(`/home`);
+        }
+    }, [session]);
 
     return (
         <>
@@ -26,14 +26,6 @@ const Home = () => {
         </>
     );
 };
-
-// export async function getServerSideProps() {
-//     return {
-//         props: {
-//             providers: await getProviders()
-//         }
-//     };
-// }
 
 Home.defaultProps = {};
 
