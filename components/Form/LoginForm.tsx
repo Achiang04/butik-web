@@ -18,7 +18,7 @@ const LoginForm = () => {
         <Formik
             onSubmit={(values) => {
                 console.log('values', values);
-                router.push('/home');
+                router.push('/product');
             }}
             initialValues={{
                 email: '',
