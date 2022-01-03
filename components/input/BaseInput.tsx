@@ -20,6 +20,7 @@ export interface BaseInputProps {
     onChange?: (val: string) => void;
     onBlur?: (e: any) => void;
     onFocus?: (e: any) => void;
+    withBorder?: boolean;
 }
 
 const BaseInput = ({
@@ -39,7 +40,8 @@ const BaseInput = ({
     placeholderColor,
     roundedSize,
     textColor,
-    textSize
+    textSize,
+    withBorder
 }: BaseInputProps) => {
     return (
         <input
@@ -60,12 +62,12 @@ const BaseInput = ({
                 text-${textSize}
                 text-${textColor}
                 placeholder-${placeholderColor}
-                border
-                border-${borderColor}
                 bg-${backgroundColor}
                 focus:outline-none
                 `,
-                roundedSize && `${roundedSize}`
+                roundedSize && `${roundedSize}`,
+                withBorder && 'border',
+                borderColor && `border-${borderColor}`
             )}
         />
     );
@@ -79,7 +81,8 @@ BaseInput.defaultProps = {
     placeholderColor: 'softGray',
     textColor: 'black',
     roundedSize: 'rounded-sm',
-    borderColor: 'borderGray'
+    borderColor: 'borderGray',
+    withBorder: true
 };
 
 export interface FormBaseInputProps extends BaseInputProps {

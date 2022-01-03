@@ -29,10 +29,10 @@ const Header = (props: HeaderProps) => {
                         </div>
                     </div>
                     <div className="flex">
-                        <div className="border border-pink rounded bg-pink shadow-md px-1.5 py-1.5 mr-2 flex items-center">
+                        <div className="border border-pink rounded bg-pink shadow-md px-1.5 py-1.5 mr-2 flex items-center cursor-pointer">
                             <img className="w-6 h-6" src="/img/user_icon.png" alt="icon" />
                         </div>
-                        <div className="border border-pink rounded bg-pink shadow-md px-1.5 py-1.5 flex items-center">
+                        <div className="border border-pink rounded bg-pink shadow-md px-1.5 py-1.5 flex items-center cursor-pointer">
                             <img className="w-6 h-6" src="/img/cart_icon.png" alt="icon" />
                         </div>
                     </div>

@@ -37,9 +37,15 @@ module.exports = {
                 violet: '#7E33E0',
                 softGray: '#9096B2',
                 borderGray: '#C2C5E1',
+                borderSoftGray: '#E7E6EF',
                 pink: '#FB2E86',
                 textWhite: '#F1F1F1',
-                textBlack: '#0D0E43'
+                textBlack: '#0D0E43',
+                textPurple: '#151875',
+                textSoftGray: '#8A8FB9',
+                saleTage: '#3F509E',
+                cardBg: '#F6F7FB',
+                cardBgHover: '#EBF4F3'
             },
             width: {
                 '5p': '5%',
@@ -163,11 +169,13 @@ module.exports = {
                 '85p': '85%',
                 '90p': '90%',
                 '95p': '95%',
+                85: '22rem',
                 120: '30rem',
                 140: '35rem',
                 160: '40rem',
                 200: '50rem',
-                220: '55rem'
+                220: '55rem',
+                8.5: '2.12rem'
             },
             maxHeight: {
                 1: '0.25rem',
