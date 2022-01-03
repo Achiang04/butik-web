@@ -6,7 +6,7 @@ export interface HeaderProps {}
 
 const Header = (props: HeaderProps) => {
     return (
-        <>
+        <div className="fixed w-full z-30">
             <div className="bg-violet h-6 flex items-center justify-center">
                 <div className="flex w-3/4">
                     <div className="flex items-center">
@@ -38,7 +38,7 @@ const Header = (props: HeaderProps) => {
                     </div>
                 </div>
             </div>
-        </>
+        </div>
     );
 };
 

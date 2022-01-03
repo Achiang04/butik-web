@@ -22,10 +22,10 @@ const productData = [
 
 const Product = () => {
     return (
-        <>
+        <div>
             <Header />
 
-            <div className="flex justify-center">
+            <div className="flex justify-center pt-24">
                 <div className="w-3/4 mt-10">
                     <div className="flex justify-between items-center">
                         <div>
@@ -49,7 +49,7 @@ const Product = () => {
                     </div>
                 </div>
             </div>
-        </>
+        </div>
     );
 };
 
