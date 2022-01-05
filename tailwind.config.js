@@ -47,7 +47,10 @@ module.exports = {
                 cardBg: '#F6F7FB',
                 cardBgHover: '#EBF4F3',
                 footerBg: '#EEEFFB',
-                textFooter: '#9DA0AE'
+                secondFooterBg: '#E7E4F8',
+                textFooter: '#9DA0AE',
+                shopDetailTitle: '#0D134E',
+                shopDetailDesc: '#A9ACC6'
             },
             width: {
                 '5p': '5%',
@@ -59,6 +62,7 @@ module.exports = {
                 '85p': '85%',
                 '90p': '90%',
                 '95p': '95%',
+                110: '28rem',
                 120: '30rem',
                 140: '35rem',
                 160: '40rem',

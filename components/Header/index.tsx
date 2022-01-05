@@ -4,7 +4,7 @@ import HeaderMenu from './HeaderMenu';
 
 export interface HeaderProps {}
 
-const Header = (props: HeaderProps) => {
+const Header = () => {
     return (
         <div className="fixed w-full z-30">
             <div className="bg-violet h-6 flex items-center justify-center">

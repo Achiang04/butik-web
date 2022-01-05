@@ -2,6 +2,7 @@ import { isNil } from 'ramda';
 import React from 'react';
 
 interface CardProps {
+    id: number;
     image: string;
     name: string;
     price: string;
@@ -10,9 +11,10 @@ interface CardProps {
 
 interface ShopCardProps {
     data: Array<CardProps>;
+    cardOnClick: (id: number) => void;
 }
 
-const ShopCardItem = ({ data }: ShopCardProps) => {
+const ShopCardItem = ({ data, cardOnClick }: ShopCardProps) => {
     return (
         <div className="grid grid-cols-4">
             {!isNil(data) &&
@@ -20,6 +22,7 @@ const ShopCardItem = ({ data }: ShopCardProps) => {
                     return (
                         <button
                             key={i}
+                            onClick={() => cardOnClick(e.id)}
                             className="flex flex-col items-center justify-center w-64 h-85 mt-10 mx-3 cursor-pointer truncate">
                             <div className="bg-cardBg hover:bg-cardBgHover h-72 w-64 flex items-center">
                                 <div className="relative top-24 mx-2">
