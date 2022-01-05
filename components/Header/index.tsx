@@ -11,9 +11,9 @@ const Header = (props: HeaderProps) => {
                 <div className="flex w-3/4">
                     <div className="flex items-center">
                         <img className="w-4 h-4 mr-2.5" src="/img/mail_icon.png" alt="icon" />
-                        <p className="mr-12 text-textWhite text-sm">butik@gmail.com</p>
+                        <p className="mr-12 text-textWhite text-sm">ummifiracollection@gmail.com</p>
                         <img className="w-4 h-4 mr-2.5" src="/img/phone_icon.png" alt="icon" />
-                        <p className="text-textWhite text-sm">(12345)67890</p>
+                        <p className="text-textWhite text-sm">082284914253</p>
                     </div>
                 </div>
             </div>

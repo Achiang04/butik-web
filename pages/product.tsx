@@ -1,5 +1,6 @@
 import ShopCardItem from 'components/Card/ShopCardItem';
 import Dropdown from 'components/Dropdown';
+import Footer from 'components/Footer';
 import Header from 'components/Header';
 import Search from 'components/Search';
 import React from 'react';
@@ -8,16 +9,73 @@ export interface HomeProps {}
 
 const dropdownData = ['ASC', 'DESC', 'Alphabet (A-Z)', 'Alphabet (Z-A)'];
 const productData = [
-    { image: '/img/image1.png', name: 'Vel elit euismod', price: '26.00', discountPrice: '42.00' },
-    { image: '/img/image1.png', name: 'Vel elit euismod', price: '26.00', discountPrice: '42.00' },
-    { image: '/img/image1.png', name: 'Vel elit euismod', price: '26.00', discountPrice: '42.00' },
-    { image: '/img/image1.png', name: 'Vel elit euismod', price: '26.00', discountPrice: '42.00' },
-    { image: '/img/image1.png', name: 'Vel elit euismod', price: '26.00', discountPrice: '42.00' },
-    { image: '/img/image1.png', name: 'Vel elit euismod', price: '26.00', discountPrice: '42.00' },
-    { image: '/img/image1.png', name: 'Vel elit euismod', price: '26.00', discountPrice: '42.00' },
-    { image: '/img/image1.png', name: 'Vel elit euismod', price: '26.00', discountPrice: '42.00' },
-    { image: '/img/image1.png', name: 'Vel elit euismod', price: '26.00', discountPrice: '42.00' },
-    { image: '/img/image1.png', name: 'Vel elit euismod', price: '26.00', discountPrice: '42.00' }
+    {
+        image: '/img/image1.png',
+        name: 'Vel elit euismod',
+        price: '26.000',
+        discountPrice: '42.000'
+    },
+    {
+        image: '/img/image1.png',
+        name: 'Ultricies condimentum imperdiet',
+        price: '26.000',
+        discountPrice: '42.000'
+    },
+    {
+        image: '/img/image1.png',
+        name: 'Vel elit euismod',
+        price: '26.000',
+        discountPrice: '42.000'
+    },
+    {
+        image: '/img/image1.png',
+        name: 'Vel elit euismod',
+        price: '26.000',
+        discountPrice: '42.000'
+    },
+    {
+        image: '/img/image1.png',
+        name: 'Vel elit euismod',
+        price: '26.000',
+        discountPrice: '42.000'
+    },
+    {
+        image: '/img/image1.png',
+        name: 'Vel elit euismod',
+        price: '26.000',
+        discountPrice: '42.000'
+    },
+    {
+        image: '/img/image1.png',
+        name: 'Vel elit euismod',
+        price: '26.000',
+        discountPrice: '42.000'
+    },
+    {
+        image: '/img/image1.png',
+        name: 'Vel elit euismod',
+        price: '26.000',
+        discountPrice: '42.000'
+    },
+    {
+        image: '/img/image1.png',
+        name: 'Vel elit euismod',
+        price: '26.000',
+        discountPrice: '42.000'
+    },
+    {
+        image: '/img/image1.png',
+        name: 'Vel elit euismod',
+        price: '26.000',
+        discountPrice: '42.000'
+    },
+    {
+        image: '/img/image1.png',
+        name: 'Vel elit euismod',
+        price: '26.000',
+        discountPrice: '42.000'
+    },
+    { image: '/img/image1.png', name: 'Vel elit euismod', price: '26.000', discountPrice: '42.000' }
 ];
 
 const Product = () => {
@@ -44,11 +102,13 @@ const Product = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="mt-10">
+                    <div className="mt-5 mb-20">
                         <ShopCardItem data={productData} />
                     </div>
                 </div>
             </div>
+
+            <Footer />
         </div>
     );
 };

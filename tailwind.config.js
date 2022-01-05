@@ -45,7 +45,9 @@ module.exports = {
                 textSoftGray: '#8A8FB9',
                 saleTage: '#3F509E',
                 cardBg: '#F6F7FB',
-                cardBgHover: '#EBF4F3'
+                cardBgHover: '#EBF4F3',
+                footerBg: '#EEEFFB',
+                textFooter: '#9DA0AE'
             },
             width: {
                 '5p': '5%',
