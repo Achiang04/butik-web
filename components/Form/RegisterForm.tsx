@@ -10,10 +10,11 @@ export interface Props {
 
 const validationSchema = Yup.object().shape({
     email: Yup.string().required('Email is Required').email('Email is not valid'),
-    password: Yup.string().required('Password is Required').min(8)
+    password: Yup.string().required('Password is Required').min(8),
+    confirmPassword: Yup.string().required('Password is Required').min(8)
 });
 
-const LoginForm = ({ handleChangeStatus }: Props) => {
+const RegisterForm = ({ handleChangeStatus }: Props) => {
     const router = useRouter();
 
     return (
@@ -24,7 +25,8 @@ const LoginForm = ({ handleChangeStatus }: Props) => {
             }}
             initialValues={{
                 email: '',
-                password: ''
+                password: '',
+                confirmPassword: ''
             }}
             validationSchema={validationSchema}>
             {(props) => {
@@ -32,9 +34,9 @@ const LoginForm = ({ handleChangeStatus }: Props) => {
                 return (
                     <div className="w-screen h-screen flex justify-center items-center bg-white">
                         <div className="border rounded-lg shadow-xl pt-12 pb-14 px-14 bg-white flex flex-col">
-                            <p className="text-4xl self-center font-extrabold">Login</p>
+                            <p className="text-4xl self-center font-extrabold">Register</p>
                             <p className="text-softGray text-base mt-2 self-center">
-                                Please login using account detail bellow.
+                                Please fill your account detail bellow.
                             </p>
                             <form onSubmit={handleSubmit}>
                                 <div className="mt-9 min-w-110">
@@ -52,9 +54,14 @@ const LoginForm = ({ handleChangeStatus }: Props) => {
                                             withFormik
                                         />
                                     </div>
-                                    <button className="text-softGray text-base">
-                                        Forgot your password?
-                                    </button>
+                                    <div className="mt-3">
+                                        <BaseInput
+                                            placeholder="Confirm Password"
+                                            type="password"
+                                            name="confirmPassword"
+                                            withFormik
+                                        />
+                                    </div>
                                 </div>
                                 <button
                                     className="flex bg-pink text-white min-w-110 justify-center py-3 mt-5 rounded font-bold text-base"
@@ -65,9 +72,9 @@ const LoginForm = ({ handleChangeStatus }: Props) => {
                             </form>
                             <div className="flex justify-center mt-5">
                                 <p className="text-softGray text-base font-extralight">
-                                    Don&apos;t have an Account?{' '}
+                                    Already have Account?{' '}
                                     <button onClick={handleChangeStatus} className="font-semibold">
-                                        Create account
+                                        Back to Login
                                     </button>
                                 </p>
                             </div>
@@ -79,4 +86,4 @@ const LoginForm = ({ handleChangeStatus }: Props) => {
     );
 };
 
-export default React.memo(LoginForm);
+export default React.memo(RegisterForm);
