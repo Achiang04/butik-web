@@ -25,7 +25,7 @@ const RelatedProducts = ({ data }: RelatedProductsProps) => {
                                 <img className="w-72 h-96" src={e.img} alt="relatedImage" />
                                 <div className="flex justify-between">
                                     <div>
-                                        <p className="text-textPurple font-medium mt-3">
+                                        <p className="text-textPurple font-medium mt-3 text-base">
                                             {e.title}
                                         </p>
                                         <p className="text-sm text-textPurple mt-1">Rp.{e.price}</p>

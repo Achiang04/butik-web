@@ -52,7 +52,12 @@ module.exports = {
                 shopDetailTitle: '#0D134E',
                 shopDetailDesc: '#A9ACC6',
                 shopDetailBg: '#F9F8FE',
-                relatedText: '#101750'
+                relatedText: '#101750',
+                blueCircle: '#5625DF',
+                pinkCircle: '#FF27B7',
+                cyanCircle: '#37DAF3',
+                yellowCircle: '#FFB265',
+                greenCircle: '#1BE982'
             },
             width: {
                 '5p': '5%',

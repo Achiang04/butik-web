@@ -29,7 +29,7 @@ const Header = () => {
                         <div className="flex ml-20">
                             <HeaderMenu text="Home" location="/home" />
                             <HeaderMenu text="Product" location="/product" />
-                            <HeaderMenu text="About Us" location="/about" />
+                            <HeaderMenu text="About" location="/about" />
                             <HeaderMenu text="Contact" location="/contact" />
                         </div>
                     </div>

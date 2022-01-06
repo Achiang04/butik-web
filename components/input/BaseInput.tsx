@@ -77,7 +77,7 @@ BaseInput.defaultProps = {
     heightSize: '12',
     paddingXSize: '3.5',
     paddingYSize: '3.5',
-    textSize: 'sm',
+    textSize: 'base',
     placeholderColor: 'softGray',
     textColor: 'black',
     roundedSize: 'rounded-sm',

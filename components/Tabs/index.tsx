@@ -43,7 +43,7 @@ const Tabs = ({ tabData }: TabsProps) => {
                     return (
                         active === i && (
                             <div className="mt-5">
-                                <p className="text-shopDetailDesc">{e.content}</p>
+                                <p className="text-shopDetailDesc text-base">{e.content}</p>
                             </div>
                         )
                     );
