@@ -36,7 +36,9 @@ const Footer = () => {
             </div>
             <div className="flex flex-col items-center bg-secondFooterBg">
                 <div className="w-3/4 py-4">
-                    <p className="font-semibold text-textFooter">©Webecy - All Rights Reserved</p>
+                    <p className="font-semibold text-sm text-textFooter">
+                        ©Webecy - All Rights Reserved
+                    </p>
                 </div>
             </div>
         </div>

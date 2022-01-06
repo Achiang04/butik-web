@@ -6,7 +6,7 @@ import Search from 'components/Search';
 import { useRouter } from 'next/dist/client/router';
 import React, { useCallback } from 'react';
 
-export interface HomeProps {}
+interface ProductProps {}
 
 const dropdownData = ['ASC', 'DESC', 'Alphabet (A-Z)', 'Alphabet (Z-A)'];
 const productData = [

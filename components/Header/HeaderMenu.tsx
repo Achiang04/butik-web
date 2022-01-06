@@ -1,12 +1,28 @@
+import clsx from 'clsx';
+import { useRouter } from 'next/dist/client/router';
+import Link from 'next/link';
 import React from 'react';
-
 export interface HeaderProps {
     text: string;
+    location: string;
 }
 
 const HeaderMenu = (props: HeaderProps) => {
-    const { text } = props;
-    return <button className="mr-9 text-textBlack hover:text-pink">{text}</button>;
+    const { text, location } = props;
+    const router = useRouter();
+    const active = router.pathname === location;
+
+    return (
+        <Link href={location}>
+            <p
+                className={clsx(
+                    'mr-9 hover:text-pink cursor-pointer',
+                    active ? 'text-pink' : 'text-textBlack'
+                )}>
+                {text}
+            </p>
+        </Link>
+    );
 };
 
 HeaderMenu.defaultProps = {

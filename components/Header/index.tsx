@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 
 import HeaderMenu from './HeaderMenu';
@@ -17,15 +18,19 @@ const Header = () => {
                     </div>
                 </div>
             </div>
-            <div className="bg-white h-20 flex items-center justify-center border-b shadow-md">
+            <div className="bg-white h-16 flex items-center justify-center border-b shadow-md">
                 <div className="flex w-3/4 justify-between">
                     <div className="flex items-center">
-                        <p className="text-4xl text-textBlack font-extrabold">Butik</p>
+                        <Link href="/home">
+                            <p className="text-4xl text-textBlack font-extrabold cursor-pointer">
+                                Butik
+                            </p>
+                        </Link>
                         <div className="flex ml-20">
-                            <HeaderMenu text="Home" />
-                            <HeaderMenu text="Products" />
-                            <HeaderMenu text="About Us" />
-                            <HeaderMenu text="Contact" />
+                            <HeaderMenu text="Home" location="/home" />
+                            <HeaderMenu text="Product" location="/product" />
+                            <HeaderMenu text="About Us" location="/about" />
+                            <HeaderMenu text="Contact" location="/contact" />
                         </div>
                     </div>
                     <div className="flex">
