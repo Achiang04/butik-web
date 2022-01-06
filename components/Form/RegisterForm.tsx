@@ -67,7 +67,7 @@ const RegisterForm = ({ handleChangeStatus }: Props) => {
                                     className="flex bg-pink text-white min-w-110 justify-center py-3 mt-5 rounded font-bold text-base"
                                     type="submit"
                                     disabled={isSubmitting}>
-                                    Sign In
+                                    Sign Up
                                 </button>
                             </form>
                             <div className="flex justify-center mt-5">

@@ -50,7 +50,9 @@ module.exports = {
                 secondFooterBg: '#E7E4F8',
                 textFooter: '#9DA0AE',
                 shopDetailTitle: '#0D134E',
-                shopDetailDesc: '#A9ACC6'
+                shopDetailDesc: '#A9ACC6',
+                shopDetailBg: '#F9F8FE',
+                relatedText: '#101750'
             },
             width: {
                 '5p': '5%',
