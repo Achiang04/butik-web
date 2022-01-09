@@ -2,12 +2,12 @@ import clsx from 'clsx';
 import { useRouter } from 'next/dist/client/router';
 import Link from 'next/link';
 import React from 'react';
-export interface HeaderProps {
+export interface Props {
     text: string;
     location: string;
 }
 
-const HeaderMenu = (props: HeaderProps) => {
+const HeaderMenu = (props: Props) => {
     const { text, location } = props;
     const router = useRouter();
     const active = router.pathname === location;

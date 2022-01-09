@@ -1,5 +1,7 @@
 import Footer from 'components/Footer';
 import Header from 'components/Header';
+import BaseInput from 'components/input/BaseInput';
+import TextAreaComponent from 'components/input/TextAreaComponent';
 import { Formik } from 'formik';
 import React from 'react';
 import * as Yup from 'yup';
@@ -31,7 +33,7 @@ const Contact = () => {
                         <Header />
 
                         <div className="flex flex-col items-center pt-24">
-                            <div className="w-3/4 mt-10">
+                            <div className="w-4/6 mt-10">
                                 <div className="flex justify-between">
                                     <div className="w-1/2 mr-10">
                                         <p className="text-textPurple text-4xl font-semibold">
@@ -106,7 +108,7 @@ const Contact = () => {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="mt-40 flex">
+                                <div className="mt-40 flex items-center">
                                     <div className="w-2/6 mr-10">
                                         <p className="text-textPurple text-4xl font-semibold">
                                             Get In Touch
@@ -116,8 +118,42 @@ const Contact = () => {
                                             Mattis neque ultrices tristique amet erat vitae eget
                                             dolor los vitae lobortis quis bibendum quam.
                                         </p>
+                                        <div className="flex mt-10 mb-5">
+                                            <div className="mr-2.5">
+                                                <BaseInput
+                                                    placeholder="Your Name*"
+                                                    type="text"
+                                                    name="name"
+                                                    withFormik
+                                                />
+                                            </div>
+                                            <div className="ml-2.5">
+                                                <BaseInput
+                                                    placeholder="Your E-mail"
+                                                    type="email"
+                                                    name="email"
+                                                    withFormik
+                                                />
+                                            </div>
+                                        </div>
+                                        <BaseInput
+                                            placeholder="Subject"
+                                            type="text"
+                                            name="subject"
+                                            withFormik
+                                        />
+                                        <div className="mt-5">
+                                            <TextAreaComponent
+                                                placeholder="Subject"
+                                                name="subject"
+                                                withFormik
+                                            />
+                                        </div>
+                                        <button className="py-2 px-10 bg-pink text-white rounded">
+                                            Send Mail
+                                        </button>
                                     </div>
-                                    <div className="w-4/6 ml-10">
+                                    <div className="w-4/6 ml-10 mb-20">
                                         <img
                                             className="w-full h-200"
                                             src="/img/contact_us.png"

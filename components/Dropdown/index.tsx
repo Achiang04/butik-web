@@ -4,11 +4,11 @@ import clsx from 'clsx';
 import { isNil } from 'ramda';
 import React, { Fragment, useCallback, useState } from 'react';
 
-export interface DropdownProps {
+export interface Props {
     data: Array<string>;
 }
 
-const Dropdown = ({ data }: DropdownProps) => {
+const Dropdown = ({ data }: Props) => {
     const [selected, setSelected] = useState(data[0]);
 
     const handleSelect = useCallback(

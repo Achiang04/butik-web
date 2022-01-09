@@ -8,8 +8,6 @@ import {
 } from 'next-share';
 import React from 'react';
 
-export interface ShareButtonProps {}
-
 const ShareButton = () => {
     return (
         <div className="flex items-center">

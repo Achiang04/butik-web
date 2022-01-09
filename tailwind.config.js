@@ -57,7 +57,8 @@ module.exports = {
                 pinkCircle: '#FF27B7',
                 cyanCircle: '#37DAF3',
                 yellowCircle: '#FFB265',
-                greenCircle: '#1BE982'
+                greenCircle: '#1BE982',
+                aboutClientBg: '#FBFBFF'
             },
             width: {
                 '5p': '5%',

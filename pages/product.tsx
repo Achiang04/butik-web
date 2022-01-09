@@ -108,7 +108,7 @@ const Product = () => {
             <Header />
 
             <div className="flex justify-center pt-24">
-                <div className="w-3/4 mt-20">
+                <div className="w-4/6 mt-20">
                     <div className="flex justify-between items-center">
                         <div>
                             <p className="text-textPurple text-xl font-semibold">

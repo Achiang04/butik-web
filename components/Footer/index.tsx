@@ -1,12 +1,10 @@
 import React from 'react';
 
-export interface FooterProps {}
-
 const Footer = () => {
     return (
         <div className="absolute  w-full z-30">
             <div className="flex flex-col items-center bg-footerBg">
-                <div className="w-3/4 my-10 flex justify-between">
+                <div className="w-4/6 my-10 flex justify-between">
                     <div>
                         <p className="text-4xl text-textBlack font-extrabold mb-5">Butik</p>
                         <p className="text-textSoftGray text-base">Contact Info</p>
@@ -35,7 +33,7 @@ const Footer = () => {
                 </div>
             </div>
             <div className="flex flex-col items-center bg-secondFooterBg">
-                <div className="w-3/4 py-4">
+                <div className="w-4/6 py-4">
                     <p className="font-semibold text-base text-textFooter">
                         ©Webecy - All Rights Reserved
                     </p>

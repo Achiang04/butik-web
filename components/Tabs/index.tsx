@@ -8,11 +8,11 @@ interface TabData {
     content: string;
 }
 
-interface TabsProps {
+interface Props {
     tabData: Array<TabData>;
 }
 
-const Tabs = ({ tabData }: TabsProps) => {
+const Tabs = ({ tabData }: Props) => {
     const [active, setActive] = useState(0);
 
     const handleActive = useCallback(

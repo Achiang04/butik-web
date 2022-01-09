@@ -3,8 +3,6 @@ import BaseInput from 'components/input/BaseInput';
 import { Formik } from 'formik';
 import React from 'react';
 
-export interface SearchProps {}
-
 const SearchComponent = () => {
     return (
         <Formik

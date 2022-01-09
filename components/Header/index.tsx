@@ -3,13 +3,11 @@ import React from 'react';
 
 import HeaderMenu from './HeaderMenu';
 
-export interface HeaderProps {}
-
 const Header = () => {
     return (
         <div className="fixed w-full z-30">
             <div className="bg-violet h-6 flex items-center justify-center">
-                <div className="flex w-3/4">
+                <div className="flex w-4/6">
                     <div className="flex items-center">
                         <img className="w-4 h-4 mr-2.5" src="/img/mail_icon.png" alt="icon" />
                         <p className="mr-12 text-textWhite text-sm">ummifiracollection@gmail.com</p>
@@ -19,7 +17,7 @@ const Header = () => {
                 </div>
             </div>
             <div className="bg-white h-16 flex items-center justify-center border-b shadow-md">
-                <div className="flex w-3/4 justify-between">
+                <div className="flex w-4/6 justify-between">
                     <div className="flex items-center">
                         <Link href="/home">
                             <p className="text-4xl text-textBlack font-extrabold cursor-pointer">

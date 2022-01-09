@@ -9,11 +9,11 @@ interface ProductData {
     img: string;
 }
 
-interface RelatedProductsProps {
+interface Props {
     data: Array<ProductData>;
 }
 
-const RelatedProducts = ({ data }: RelatedProductsProps) => {
+const RelatedProducts = ({ data }: Props) => {
     return (
         <div className="w-full">
             <p className="text-relatedText text-4xl font-bold mb-10">Related Products</p>

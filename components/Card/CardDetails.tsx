@@ -1,8 +1,6 @@
 import ShareButton from 'components/ShareButton';
 import React from 'react';
 
-export interface CardDetailsProps {}
-
 const CardDetails = () => {
     return (
         <div className="flex shadow-2xl shadow-red-300 w-full">

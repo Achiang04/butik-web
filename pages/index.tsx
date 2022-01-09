@@ -14,7 +14,7 @@ const Home = () => {
 
     useEffect(() => {
         if (session) {
-            router.push(`/product`);
+            router.push(`/home`);
         }
     }, [session]);
 

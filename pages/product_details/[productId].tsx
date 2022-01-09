@@ -71,15 +71,15 @@ const ProductDetails = () => {
             <Header />
 
             <div className="flex flex-col items-center pt-24 mb-20">
-                <div className="w-3/4 flex justify-between mt-20">
+                <div className="w-4/6 flex justify-between mt-20">
                     <CardDetails />
                 </div>
                 <div className="w-full bg-shopDetailBg mt-20 flex justify-center">
-                    <div className="w-3/4 py-10">
+                    <div className="w-4/6 py-10">
                         <Tabs tabData={tabData} />
                     </div>
                 </div>
-                <div className="w-3/4 flex mt-20">
+                <div className="w-4/6 flex mt-20">
                     <RelatedProduct data={relatedProductData} />
                 </div>
             </div>

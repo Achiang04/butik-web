@@ -9,12 +9,12 @@ interface CardProps {
     discountPrice: string;
 }
 
-interface ShopCardProps {
+interface Props {
     data: Array<CardProps>;
     cardOnClick: (id: number) => void;
 }
 
-const ShopCardItem = ({ data, cardOnClick }: ShopCardProps) => {
+const ShopCardItem = ({ data, cardOnClick }: Props) => {
     return (
         <div className="grid grid-cols-4">
             {!isNil(data) &&
