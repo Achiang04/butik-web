@@ -12,8 +12,7 @@ const SearchComponent = () => {
             initialValues={{
                 search: ''
             }}>
-            {(props) => {
-                const { handleSubmit, isSubmitting } = props;
+            {() => {
                 return (
                     <div className="flex border border-borderSoftgray items-center rounded">
                         <BaseInput

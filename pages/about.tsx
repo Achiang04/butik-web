@@ -35,7 +35,7 @@ const About = () => {
             <Header />
 
             <div className="flex flex-col items-center pt-24">
-                <div className="w-4/6 mt-10">
+                <div className="w-4/6 mt-20">
                     <div className="flex items-center">
                         <img className="w-1/2 h-120 mr-3.5" src="/img/about.png" alt="" />
                         <div className="w-1/2 ml-3.5">
@@ -54,14 +54,14 @@ const About = () => {
                         </div>
                     </div>
 
-                    <div className="flex flex-col items-center mt-32 mb-20">
+                    <div className="flex flex-col items-center my-32">
                         <p className="text-4xl font-extrabold mb-10">Our Features</p>
                         <FeaturesCard data={featuresData} />
                     </div>
                 </div>
 
-                <div className="w-full bg-aboutClientBg flex justify-center">
-                    <div className="w-4/6 flex flex-col items-center my-10">
+                <div className="w-full bg-aboutClientBg flex justify-center mb-32">
+                    <div className="w-4/6 flex flex-col items-center my-10 mx-auto">
                         <p className="text-4xl font-extrabold">Our Client Say!</p>
                         <CarouselComponent />
                     </div>

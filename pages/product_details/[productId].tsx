@@ -5,8 +5,6 @@ import RelatedProduct from 'components/RelatedProduct';
 import Tabs from 'components/Tabs';
 import React from 'react';
 
-interface ProductDetailsProps {}
-
 const tabData = [
     {
         id: 1,

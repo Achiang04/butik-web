@@ -1,5 +1,5 @@
 import { isNil } from 'ramda';
-import React, { useCallback, useMemo } from 'react';
+import React from 'react';
 
 interface ProductData {
     id: number;

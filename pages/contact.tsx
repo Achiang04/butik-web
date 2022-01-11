@@ -33,7 +33,7 @@ const Contact = () => {
                         <Header />
 
                         <div className="flex flex-col items-center pt-24">
-                            <div className="w-4/6 mt-10">
+                            <div className="w-4/6 mt-20">
                                 <div className="flex justify-between">
                                     <div className="w-1/2 mr-10">
                                         <p className="text-textPurple text-4xl font-semibold">
@@ -108,7 +108,7 @@ const Contact = () => {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="mt-40 flex items-center">
+                                <div className="mt-20 flex items-center">
                                     <div className="w-2/6 mr-10">
                                         <p className="text-textPurple text-4xl font-semibold">
                                             Get In Touch
