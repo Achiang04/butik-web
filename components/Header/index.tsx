@@ -32,12 +32,16 @@ const Header = () => {
                         </div>
                     </div>
                     <div className="flex">
-                        <div className="border border-pink rounded bg-pink shadow-md px-1.5 py-1.5 mr-2 flex items-center cursor-pointer">
-                            <img className="w-6 h-6" src="/img/user_icon.png" alt="icon" />
-                        </div>
-                        <div className="border border-pink rounded bg-pink shadow-md px-1.5 py-1.5 flex items-center cursor-pointer">
-                            <img className="w-6 h-6" src="/img/cart_icon.png" alt="icon" />
-                        </div>
+                        <Link href="/profile">
+                            <div className="border border-pink rounded bg-pink shadow-md px-1.5 py-1.5 mr-2 flex items-center cursor-pointer">
+                                <img className="w-6 h-6" src="/img/user_icon.png" alt="icon" />
+                            </div>
+                        </Link>
+                        <Link href="/cart">
+                            <div className="border border-pink rounded bg-pink shadow-md px-1.5 py-1.5 flex items-center cursor-pointer">
+                                <img className="w-6 h-6" src="/img/cart_icon.png" alt="icon" />
+                            </div>
+                        </Link>
                     </div>
                 </div>
             </div>
