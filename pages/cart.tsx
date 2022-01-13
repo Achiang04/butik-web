@@ -7,6 +7,7 @@ import React, { useCallback, useMemo, useState } from 'react';
 
 const productData = [
     {
+        id: 1,
         img: '/img/cart1.png',
         title: 'Ut diam consequat',
         color: 'Brown',
@@ -15,6 +16,7 @@ const productData = [
         quantity: 1
     },
     {
+        id: 2,
         img: '/img/cart2.png',
         title: 'Vel faucibus posuere',
         color: 'Brown',
@@ -23,6 +25,7 @@ const productData = [
         quantity: 1
     },
     {
+        id: 3,
         img: '/img/cart3.png',
         title: 'Ac vitae vestibulum',
         color: 'Brown',
@@ -31,6 +34,7 @@ const productData = [
         quantity: 1
     },
     {
+        id: 4,
         img: '/img/cart4.png',
         title: 'Elit massa diam',
         color: 'Brown',
@@ -39,6 +43,7 @@ const productData = [
         quantity: 1
     },
     {
+        id: 5,
         img: '/img/cart5.png',
         title: 'Proin pharetra elementum',
         color: 'Brown',
@@ -51,8 +56,6 @@ const productData = [
 const Cart = () => {
     const router = useRouter();
     const [curtData, setCurtData] = useState(productData);
-    const priceData = curtData.map((e) => parseInt(e.price) * 1000);
-    const totalPrice = priceData.reduce((a, b) => a + b, 0);
 
     const handleOrderComplete = useCallback(() => {
         router.push('/order_complete');
@@ -61,6 +64,32 @@ const Cart = () => {
     const handleClearCurt = useCallback(() => {
         setCurtData([]);
     }, []);
+
+    const handlePlusQuantity = useCallback(
+        (id) => {
+            const temp = curtData.find((e) => e.id === id);
+            const tempIndex = curtData.findIndex((e) => e.id === id);
+            const newData = { ...temp, quantity: temp.quantity + 1 };
+            const newCurtData = [...curtData];
+            newCurtData[tempIndex] = newData;
+            setCurtData(newCurtData);
+        },
+        [curtData]
+    );
+
+    const handleMinesQuantity = useCallback(
+        (id) => {
+            const temp = curtData.find((e) => e.id === id);
+            const tempIndex = curtData.findIndex((e) => e.id === id);
+            if (temp.quantity !== 1) {
+                const newData = { ...temp, quantity: temp.quantity - 1 };
+                const newCurtData = [...curtData];
+                newCurtData[tempIndex] = newData;
+                setCurtData(newCurtData);
+            }
+        },
+        [curtData]
+    );
 
     const renderEmpty = useMemo(() => {
         return (
@@ -73,6 +102,12 @@ const Cart = () => {
     }, [curtData]);
 
     const renderPrice = useMemo(() => {
+        const priceData = curtData.map((e) => parseInt(e.price) * e.quantity * 1000);
+        const totalPrice = priceData
+            .reduce((a, b) => a + b, 0)
+            .toString()
+            .replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, '.');
+
         return (
             <>
                 <div className="pb-1 border-b border-proceedBorder flex justify-between">
@@ -85,7 +120,7 @@ const Cart = () => {
                 </div>
             </>
         );
-    }, [totalPrice]);
+    }, [curtData]);
 
     return (
         <>
@@ -109,6 +144,7 @@ const Cart = () => {
                                         curtData.map((e, i) => {
                                             return (
                                                 <CartList
+                                                    id={e.id}
                                                     title={e.title}
                                                     img={e.img}
                                                     color={e.color}
@@ -116,6 +152,8 @@ const Cart = () => {
                                                     price={e.price}
                                                     quantity={e.quantity}
                                                     key={i}
+                                                    handlePlusQuantity={handlePlusQuantity}
+                                                    handleMinesQuantity={handleMinesQuantity}
                                                 />
                                             );
                                         })}

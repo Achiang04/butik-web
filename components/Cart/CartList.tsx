@@ -1,29 +1,32 @@
-import React, { useCallback, useState } from 'react';
+import React from 'react';
 
 interface Props {
+    id: number;
     title: string;
     img: string;
     color: string;
     size: string;
     price: string;
     quantity: number;
+    handlePlusQuantity: (id: number) => void;
+    handleMinesQuantity: (id: number) => void;
 }
 
 const CartList = (props: Props) => {
-    const { title, img, color, size, price } = props;
-    const [quantity, setQuantity] = useState(1);
+    const {
+        title,
+        img,
+        color,
+        size,
+        price,
+        handlePlusQuantity,
+        handleMinesQuantity,
+        quantity,
+        id
+    } = props;
+
     const totalPrice = parseInt(price) * quantity * 1000;
     const formatTotalPrice = totalPrice.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, '.');
-
-    const handlePlusQuantity = useCallback(() => {
-        setQuantity(quantity + 1);
-    }, [quantity]);
-
-    const handleMinesQuantity = useCallback(() => {
-        if (quantity !== 1) {
-            setQuantity(quantity - 1);
-        }
-    }, [quantity]);
 
     return (
         <tr className="flex justify-between items-center pb-4 mb-4 border-b">
@@ -40,7 +43,7 @@ const CartList = (props: Props) => {
                 <div className="flex items-center">
                     <button
                         type="button"
-                        onClick={handleMinesQuantity}
+                        onClick={() => handleMinesQuantity(id)}
                         className="text-xs px-1 py-0.5 border bg-buttonQuantityBg text-textQuantity">
                         -
                     </button>
@@ -49,7 +52,7 @@ const CartList = (props: Props) => {
                     </p>
                     <button
                         type="button"
-                        onClick={handlePlusQuantity}
+                        onClick={() => handlePlusQuantity(id)}
                         className="text-xs px-1 py-0.5 border bg-buttonQuantityBg text-textQuantity">
                         +
                     </button>
