@@ -61,7 +61,7 @@ const About = () => {
                 <div className="w-full bg-aboutClientBg flex justify-center mb-32">
                     <div className="w-4/6 flex flex-col items-center my-10 mx-auto">
                         <p className="text-4xl font-extrabold">Our Client Say!</p>
-                        <CarouselComponent />
+                        {/* <CarouselComponent /> */}
                     </div>
                 </div>
             </div>

@@ -20,7 +20,7 @@ const LoginForm = ({ handleChangeStatus }: Props) => {
         <Formik
             onSubmit={(values) => {
                 console.log('values', values);
-                router.push('/product');
+                router.push('/home');
             }}
             initialValues={{
                 email: '',

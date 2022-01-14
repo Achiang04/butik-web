@@ -1,10 +1,13 @@
+import '@egjs/flicking-plugins/dist/flicking-plugins.css';
+import '@egjs/flicking-plugins/dist/arrow.css';
+
+import { Arrow } from '@egjs/flicking-plugins';
+import Flicking, { ViewportSlot } from '@egjs/react-flicking';
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/solid';
 import clsx from 'clsx';
-import { isNil } from 'ramda';
 import React, { useCallback, useState } from 'react';
-import Slider from 'react-slick';
 
-const clientReviewData = [
+const data = [
     {
         id: 1,
         img: '/img/client_review1.png',
@@ -42,40 +45,33 @@ const clientReviewData = [
     }
 ];
 
-const iconClasses = 'flex-shrink-0 md:h-8 md:w-8 h-6 w-6';
-const iconButtonClasses =
-    'absolute top-1/3 z-20 focus:outline-none bg-white border flex flex-1 rounded-full w-10 h-10 md:w-14 md:h-14 items-center justify-center bg-white';
-
 const CarouselComponent = () => {
-    const [index, setIndex] = useState(clientReviewData.length > 3 ? 0 : 1);
-
-    const settings = {
-        dots: true,
-        infinite: true,
-        speed: 500,
-        slidesToShow: 3,
-        slidesToScroll: 3
-    };
+    const plugins = [new Arrow()];
 
     return (
-        // <div className="w-72 bg-red-200">
-        //     <Slider {...settings}>
-        //         {!isNil(clientReviewData) &&
-        //             clientReviewData.map((e, i) => {
-        //                 return (
-        //                     <div className={clsx('flex w-20', `bg-red-${i + 1}00`)} key={e.id}>
-        //                         <p
-        //                             className={clsx(
-        //                                 index === i && 'text-textPurple font-extrabold'
-        //                             )}>
-        //                             {e.title}
-        //                         </p>
-        //                     </div>
-        //                 );
-        //             })}
-        //     </Slider>
+        // <div className="w-72 lg:w-150 bg-red-200 flex">
+        //     <Flicking circular={true}>
+        //         {data.map((e, i) => {
+        //             return (
+        //                 <div key={e.id} className={''}>
+        //                     <p>{e.title}</p>
+        //                     <p>{e.subtitle}</p>
+        //                 </div>
+        //             );
+        //         })}
+        //     </Flicking>
         // </div>
-        <div></div>
+        <div className="w-72 bg-red-200">
+            <Flicking circular={true} plugins={plugins}>
+                <div className="card-panel">1</div>
+                <div className="card-panel">2</div>
+                <div className="card-panel">3</div>
+                <ViewportSlot>
+                    <span className="flicking-arrow-prev"></span>
+                    <span className="flicking-arrow-next"></span>
+                </ViewportSlot>
+            </Flicking>
+        </div>
     );
 };
 

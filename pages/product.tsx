@@ -17,78 +17,78 @@ const productData = [
     },
     {
         id: 2,
-        image: '/img/image1.png',
+        image: '/img/image2.png',
         name: 'Ultricies condimentum imperdiet',
         price: '26.000',
         discountPrice: '42.000'
     },
     {
         id: 3,
-        image: '/img/image1.png',
-        name: 'Vel elit euismod',
+        image: '/img/image3.png',
+        name: 'Vitae suspendisse sed',
         price: '26.000',
         discountPrice: '42.000'
     },
     {
         id: 4,
-        image: '/img/image1.png',
-        name: 'Vel elit euismod',
+        image: '/img/image4.png',
+        name: 'Sed at fermentum',
         price: '26.000',
         discountPrice: '42.000'
     },
     {
         id: 5,
-        image: '/img/image1.png',
-        name: 'Vel elit euismod',
+        image: '/img/image5.png',
+        name: 'Fusce pellentesque at',
         price: '26.000',
         discountPrice: '42.000'
     },
     {
         id: 6,
-        image: '/img/image1.png',
-        name: 'Vel elit euismod',
+        image: '/img/image6.png',
+        name: 'Vestibulum magna laoreet',
         price: '26.000',
         discountPrice: '42.000'
     },
     {
         id: 7,
-        image: '/img/image1.png',
-        name: 'Vel elit euismod',
+        image: '/img/image7.png',
+        name: 'Sollicitudin amet orci ',
         price: '26.000',
         discountPrice: '42.000'
     },
     {
         id: 8,
-        image: '/img/image1.png',
-        name: 'Vel elit euismod',
+        image: '/img/image8.png',
+        name: 'Ultrices mauris sit',
         price: '26.000',
         discountPrice: '42.000'
     },
     {
         id: 9,
-        image: '/img/image1.png',
-        name: 'Vel elit euismod',
+        image: '/img/image9.png',
+        name: 'Pellentesque condimentum ac',
         price: '26.000',
         discountPrice: '42.000'
     },
     {
         id: 10,
-        image: '/img/image1.png',
-        name: 'Vel elit euismod',
+        image: '/img/image10.png',
+        name: 'Cras scelerisque velit',
         price: '26.000',
         discountPrice: '42.000'
     },
     {
         id: 11,
-        image: '/img/image1.png',
-        name: 'Vel elit euismod',
+        image: '/img/image11.png',
+        name: 'Lectus vulputate faucibus',
         price: '26.000',
         discountPrice: '42.000'
     },
     {
         id: 12,
-        image: '/img/image1.png',
-        name: 'Vel elit euismod',
+        image: '/img/image12.png',
+        name: 'Purus risus, ut',
         price: '26.000',
         discountPrice: '42.000'
     }

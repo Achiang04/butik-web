@@ -16,14 +16,15 @@ interface Props {
 
 const ShopCardItem = ({ data, cardOnClick }: Props) => {
     return (
-        <div className="grid grid-cols-4">
+        <div className="grid grid-cols-4 gap-x-20">
             {!isNil(data) &&
                 data.map((e, i) => {
                     return (
                         <button
                             key={i}
+                            type="button"
                             onClick={() => cardOnClick(e.id)}
-                            className="flex flex-col items-center justify-center w-64 h-85 mt-10 mx-3 cursor-pointer truncate">
+                            className="flex flex-col items-center justify-center w-64 h-85 mt-10 cursor-pointer truncate">
                             <div className="bg-cardBg hover:bg-cardBgHover h-72 w-64 flex items-center">
                                 <div className="relative top-24 mx-2">
                                     <button className="hover:bg-white h-7 w-7 rounded-full flex items-center justify-center absolute -bottom-1">
