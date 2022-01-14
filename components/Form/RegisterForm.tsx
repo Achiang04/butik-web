@@ -9,6 +9,7 @@ export interface Props {
 }
 
 const validationSchema = Yup.object().shape({
+    name: Yup.string().required('Name is Required'),
     email: Yup.string().required('Email is Required').email('Email is not valid'),
     password: Yup.string().required('Password is Required').min(8),
     confirmPassword: Yup.string().required('Password is Required').min(8)
@@ -24,6 +25,7 @@ const RegisterForm = ({ handleChangeStatus }: Props) => {
                 router.push('/product');
             }}
             initialValues={{
+                name: '',
                 email: '',
                 password: '',
                 confirmPassword: ''
@@ -41,11 +43,19 @@ const RegisterForm = ({ handleChangeStatus }: Props) => {
                             <form onSubmit={handleSubmit}>
                                 <div className="mt-9 min-w-110">
                                     <BaseInput
-                                        placeholder="Email address"
-                                        type="email"
-                                        name="email"
+                                        placeholder="Username"
+                                        type="text"
+                                        name="name"
                                         withFormik
                                     />
+                                    <div className="mt-3">
+                                        <BaseInput
+                                            placeholder="Email address"
+                                            type="email"
+                                            name="email"
+                                            withFormik
+                                        />
+                                    </div>
                                     <div className="mt-3">
                                         <BaseInput
                                             placeholder="Password"
