@@ -125,6 +125,9 @@ module.exports = {
                 hmd: { raw: '(min-height: 720px)' },
                 hlg: { raw: '(min-height: 1080px)' }
             },
+            backgroundImage: {
+                subscribe: 'url("/img/home_subscribe.png")'
+            },
             maxWidth: {
                 1: '0.25rem',
                 2: '0.5rem',

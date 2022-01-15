@@ -63,7 +63,7 @@ const Trending = () => {
     return (
         <>
             <div className="grid grid-rows-2">
-                <div className="grid grid-cols-4">
+                <div className="grid grid-cols-4 gap-20">
                     {!isNil(TrendingData) &&
                         TrendingData.map((e, i) => {
                             if (i < 4) {
@@ -100,7 +100,7 @@ const Trending = () => {
                             }
                         })}
                 </div>
-                <div className="grid grid-cols-3 mt-10 gap-28">
+                <div className="grid grid-cols-3 mt-10 gap-48">
                     {!isNil(TrendingData) &&
                         TrendingData.map((e, i) => {
                             if (i >= 4 && i <= 5) {
@@ -136,7 +136,7 @@ const Trending = () => {
                                 );
                             }
                         })}
-                    <div className="grid grid-rows-3 gap-6 h-72">
+                    <div className="grid grid-rows-3 gap-6 h-72 ml-2">
                         {!isNil(TrendingData) &&
                             TrendingData.map((e, i) => {
                                 if (i >= 6 && i <= 8) {

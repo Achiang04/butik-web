@@ -1,5 +1,6 @@
 import Footer from 'components/Footer';
 import Header from 'components/Header';
+import Categories from 'components/Products/Categories';
 import Featured from 'components/Products/Featured';
 import Leatest from 'components/Products/Leatest';
 import Trending from 'components/Products/Trending';
@@ -38,7 +39,7 @@ const Home = () => {
                             </p>
                             <button
                                 type="button"
-                                className="py-4 px-10 rounded bg-pink text-white text-base font-bold mt-7">
+                                className="py-4 px-10 rounded-md bg-pink text-white text-base font-bold mt-7">
                                 Shop Now
                             </button>
                         </div>
@@ -90,7 +91,7 @@ const Home = () => {
                             <div className="flex items-center mt-7">
                                 <button
                                     type="button"
-                                    className="py-3.5 px-8 rounded bg-pink text-white text-base font-bold">
+                                    className="py-3.5 px-8 rounded-md bg-pink text-white text-base font-bold">
                                     Add To Cart
                                 </button>
                                 <div className="ml-4 text-sm text-textPurple">
@@ -135,7 +136,7 @@ const Home = () => {
                             </div>
                             <button
                                 type="button"
-                                className="w-52 h-14 rounded bg-pink text-white text-base font-bold mt-10">
+                                className="w-52 h-14 rounded-md bg-pink text-white text-base font-bold mt-10">
                                 Shop Now
                             </button>
                         </div>
@@ -144,10 +145,25 @@ const Home = () => {
                         </div>
                     </div>
                 </div>
-                <div className="w-4/6 flex flex-col mt-20">
+                <div className="h-110 w-full mt-32 flex justify-center items-center">
+                    <img className="absolute z-10" src="/img/home_subscribe.png" alt="" />
+                    <div className="relative w-4/6 z-20 flex flex-col mt-5 items-center justify-center">
+                        <p className="text-4xl text-textPurple font-extrabold">
+                            Get Leatest Update By Subscribe
+                        </p>
+                        <p className="text-4xl text-textPurple font-extrabold">Our Newslater</p>
+                        <button
+                            type="button"
+                            className="w-52 h-14 rounded-md bg-pink text-white text-base font-bold mt-7">
+                            Shop Now
+                        </button>
+                    </div>
+                </div>
+                <div className="w-4/6 flex flex-col my-20">
                     <p className="text-4xl font-extrabold text-textPurple self-center mb-12">
                         Top Categories
                     </p>
+                    <Categories />
                 </div>
             </div>
             <Footer />
