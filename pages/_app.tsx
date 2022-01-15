@@ -1,5 +1,4 @@
 import 'tailwindcss/tailwind.css';
-import './custom.css';
 
 import type { AppProps } from 'next/app';
 import { Provider } from 'next-auth/client';

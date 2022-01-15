@@ -3,6 +3,7 @@ import Footer from 'components/Footer';
 import Header from 'components/Header';
 import RelatedProduct from 'components/RelatedProduct';
 import Tabs from 'components/Tabs';
+import Head from 'next/head';
 import React from 'react';
 
 const tabData = [

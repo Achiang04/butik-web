@@ -1,6 +1,7 @@
 import Footer from 'components/Footer';
 import Header from 'components/Header';
 import { useRouter } from 'next/dist/client/router';
+import Head from 'next/head';
 import React, { useCallback } from 'react';
 
 const OrderComplete = () => {
@@ -12,6 +13,10 @@ const OrderComplete = () => {
 
     return (
         <>
+            <Head>
+                <title>Butik</title>
+            </Head>
+
             <Header />
 
             <div className="flex flex-col items-center py-24">

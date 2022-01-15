@@ -2,6 +2,7 @@ import CartList from 'components/Cart/CartList';
 import Footer from 'components/Footer';
 import Header from 'components/Header';
 import { useRouter } from 'next/dist/client/router';
+import Head from 'next/head';
 import { isNil } from 'ramda';
 import React, { useCallback, useMemo, useState } from 'react';
 
@@ -124,6 +125,9 @@ const Cart = () => {
 
     return (
         <>
+            <Head>
+                <title>Butik</title>
+            </Head>
             <Header />
             <div className="flex flex-col items-center py-24">
                 <div className="w-4/6 mt-20">

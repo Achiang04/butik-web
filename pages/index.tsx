@@ -1,3 +1,4 @@
+import ForgotPasswordForm from 'components/Form/ForgotPasswordForm';
 import LoginForm from 'components/Form/LoginForm';
 import RegisterForm from 'components/Form/RegisterForm';
 import { useRouter } from 'next/dist/client/router';
@@ -18,13 +19,33 @@ const Home = () => {
         }
     }, [session]);
 
-    const handleChangeStatus = useCallback(() => {
-        if (status === 'login') {
-            setStatus('register');
-        } else if (status === 'register') {
-            setStatus('login');
+    const handleStatusLogin = useCallback(() => {
+        setStatus('login');
+    }, []);
+
+    const handleStatusRegister = useCallback(() => {
+        setStatus('register');
+    }, []);
+
+    const handleStatusForgot = useCallback(() => {
+        setStatus('forgot');
+    }, []);
+
+    const getScreen = useCallback((status) => {
+        switch (status) {
+            case 'login':
+                return (
+                    <LoginForm
+                        handleStatusRegister={handleStatusRegister}
+                        handleStatusForgot={handleStatusForgot}
+                    />
+                );
+            case 'register':
+                return <RegisterForm handleStatusLogin={handleStatusLogin} />;
+            case 'forgot':
+                return <ForgotPasswordForm handleStatusLogin={handleStatusLogin} />;
         }
-    }, [status]);
+    }, []);
 
     return (
         <>
@@ -32,11 +53,7 @@ const Home = () => {
                 <title>Butik</title>
             </Head>
 
-            {status === 'login' ? (
-                <LoginForm handleChangeStatus={handleChangeStatus} />
-            ) : (
-                <RegisterForm handleChangeStatus={handleChangeStatus} />
-            )}
+            {getScreen(status)}
         </>
     );
 };

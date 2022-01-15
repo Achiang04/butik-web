@@ -5,24 +5,26 @@ import React from 'react';
 import * as Yup from 'yup';
 
 export interface Props {
-    handleChangeStatus: () => void;
+    handleStatusLogin: () => void;
 }
 
 const validationSchema = Yup.object().shape({
     name: Yup.string().required('Name is Required'),
     email: Yup.string().required('Email is Required').email('Email is not valid'),
     password: Yup.string().required('Password is Required').min(8),
-    confirmPassword: Yup.string().required('Password is Required').min(8)
+    confirmPassword: Yup.string()
+        .required('Confirm Password is Required')
+        .oneOf([Yup.ref('password'), null], 'Passwords not match')
 });
 
-const RegisterForm = ({ handleChangeStatus }: Props) => {
+const RegisterForm = ({ handleStatusLogin }: Props) => {
     const router = useRouter();
 
     return (
         <Formik
             onSubmit={(values) => {
                 console.log('values', values);
-                router.push('/product');
+                router.push('/home');
             }}
             initialValues={{
                 name: '',
@@ -83,7 +85,7 @@ const RegisterForm = ({ handleChangeStatus }: Props) => {
                             <div className="flex justify-center mt-5">
                                 <p className="text-softGray text-base font-extralight">
                                     Already have Account?{' '}
-                                    <button onClick={handleChangeStatus} className="font-semibold">
+                                    <button onClick={handleStatusLogin} className="font-semibold">
                                         Back to Login
                                     </button>
                                 </p>

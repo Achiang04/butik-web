@@ -4,6 +4,7 @@ import Categories from 'components/Products/Categories';
 import Featured from 'components/Products/Featured';
 import Leatest from 'components/Products/Leatest';
 import Trending from 'components/Products/Trending';
+import Head from 'next/head';
 import React, { useCallback } from 'react';
 
 export interface HomeProps {}
@@ -20,6 +21,10 @@ const Home = () => {
 
     return (
         <>
+            <Head>
+                <title>Butik</title>
+            </Head>
+
             <Header />
 
             <div className="flex flex-col items-center pt-22">

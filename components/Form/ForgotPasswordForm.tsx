@@ -1,31 +1,24 @@
 import BaseInput from 'components/input/BaseInput';
 import { Formik } from 'formik';
-import { useRouter } from 'next/dist/client/router';
 import React from 'react';
 import * as Yup from 'yup';
 
 export interface Props {
-    handleStatusRegister: () => void;
-    handleStatusForgot: () => void;
+    handleStatusLogin: () => void;
 }
 
 const validationSchema = Yup.object().shape({
-    email: Yup.string().required('Email is Required').email('Email is not valid'),
-    password: Yup.string().required('Password is Required').min(8)
+    email: Yup.string().required('Email is Required').email('Email is not valid')
 });
 
-const LoginForm = ({ handleStatusRegister, handleStatusForgot }: Props) => {
-    const router = useRouter();
-
+const LoginForm = ({ handleStatusLogin }: Props) => {
     return (
         <Formik
             onSubmit={(values) => {
-                console.log('values', values);
-                router.push('/home');
+                console.log(values);
             }}
             initialValues={{
-                email: '',
-                password: ''
+                email: ''
             }}
             validationSchema={validationSchema}>
             {(props) => {
@@ -33,9 +26,10 @@ const LoginForm = ({ handleStatusRegister, handleStatusForgot }: Props) => {
                 return (
                     <div className="w-screen h-screen flex justify-center items-center bg-white">
                         <div className="border rounded-lg shadow-xl pt-12 pb-14 px-14 bg-white flex flex-col">
-                            <p className="text-4xl self-center font-extrabold">Login</p>
+                            <p className="text-4xl self-center font-extrabold">Forgot Password</p>
                             <p className="text-softGray text-base mt-2 self-center">
-                                Please login using account detail bellow.
+                                Enter your email address and we’ll send you a link to reset your
+                                password
                             </p>
                             <form onSubmit={handleSubmit}>
                                 <div className="mt-9 min-w-110">
@@ -45,23 +39,9 @@ const LoginForm = ({ handleStatusRegister, handleStatusForgot }: Props) => {
                                         name="email"
                                         withFormik
                                     />
-                                    <div className="mt-3">
-                                        <BaseInput
-                                            placeholder="Password"
-                                            type="password"
-                                            name="password"
-                                            withFormik
-                                        />
-                                    </div>
-                                    <button
-                                        type="button"
-                                        onClick={handleStatusForgot}
-                                        className="text-softGray text-base font-semibold">
-                                        Forgot your password?
-                                    </button>
                                 </div>
                                 <button
-                                    className="flex bg-pink text-white min-w-110 justify-center py-3 mt-5 rounded font-bold text-base"
+                                    className="flex bg-pink text-white w-full min-w-110 justify-center py-3 mt-5 rounded font-bold text-base"
                                     type="submit"
                                     disabled={isSubmitting}>
                                     Sign In
@@ -69,12 +49,8 @@ const LoginForm = ({ handleStatusRegister, handleStatusForgot }: Props) => {
                             </form>
                             <div className="flex justify-center mt-5">
                                 <p className="text-softGray text-base font-extralight">
-                                    Don&apos;t have an Account?{' '}
-                                    <button
-                                        type="button"
-                                        onClick={handleStatusRegister}
-                                        className="font-semibold">
-                                        Create account
+                                    <button onClick={handleStatusLogin} className="font-semibold">
+                                        Back to Login
                                     </button>
                                 </p>
                             </div>

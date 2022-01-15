@@ -4,6 +4,7 @@ import Footer from 'components/Footer';
 import Header from 'components/Header';
 import Search from 'components/Search';
 import { useRouter } from 'next/dist/client/router';
+import Head from 'next/head';
 import React, { useCallback } from 'react';
 
 const dropdownData = ['ASC', 'DESC', 'Alphabet (A-Z)', 'Alphabet (Z-A)'];
@@ -103,6 +104,10 @@ const Product = () => {
 
     return (
         <>
+            <Head>
+                <title>Butik</title>
+            </Head>
+
             <Header />
 
             <div className="flex justify-center pt-24">

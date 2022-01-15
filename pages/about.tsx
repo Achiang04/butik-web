@@ -2,6 +2,7 @@ import FeaturesCard from 'components/Card/FeaturesCard';
 import CarouselComponent from 'components/Carousel/CarouselComponent';
 import Footer from 'components/Footer';
 import Header from 'components/Header';
+import Head from 'next/head';
 import React from 'react';
 
 const featuresData = [
@@ -30,6 +31,10 @@ const featuresData = [
 const About = () => {
     return (
         <>
+            <Head>
+                <title>Butik</title>
+            </Head>
+
             <Header />
 
             <div className="flex flex-col items-center pt-24">

@@ -1,11 +1,16 @@
 import Footer from 'components/Footer';
 import Header from 'components/Header';
+import Head from 'next/head';
 import Link from 'next/link';
 import React from 'react';
 
 const NotFound = () => {
     return (
         <>
+            <Head>
+                <title>Butik</title>
+            </Head>
+
             <Header />
 
             <div className="flex flex-col items-center pt-20">

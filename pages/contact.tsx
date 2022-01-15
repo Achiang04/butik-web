@@ -3,6 +3,7 @@ import Header from 'components/Header';
 import BaseInput from 'components/input/BaseInput';
 import TextAreaComponent from 'components/input/TextAreaComponent';
 import { Formik } from 'formik';
+import Head from 'next/head';
 import React from 'react';
 import * as Yup from 'yup';
 
@@ -30,6 +31,10 @@ const Contact = () => {
                 const {} = props;
                 return (
                     <>
+                        <Head>
+                            <title>Butik</title>
+                        </Head>
+
                         <Header />
 
                         <div className="flex flex-col items-center pt-24">
