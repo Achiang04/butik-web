@@ -3,11 +3,20 @@ import Header from 'components/Header';
 import Featured from 'components/Products/Featured';
 import Leatest from 'components/Products/Leatest';
 import Trending from 'components/Products/Trending';
-import React from 'react';
+import React, { useCallback } from 'react';
 
 export interface HomeProps {}
 
 const Home = () => {
+    const checkText = useCallback((text) => {
+        return (
+            <div className="flex items-center mb-2.5">
+                <img className="w-4 h-3 mr-2" src="/img/check_icon.png" alt="icon" />
+                <p className="text-base text-discountDescText">{text}</p>
+            </div>
+        );
+    }, []);
+
     return (
         <>
             <Header />
@@ -92,11 +101,53 @@ const Home = () => {
                         </div>
                     </div>
                 </div>
-                <div className="w-4/6 flex flex-col my-20">
+                <div className="w-4/6 flex flex-col mt-20">
                     <p className="text-4xl font-extrabold text-textPurple self-center mb-12">
                         Trending Products
                     </p>
                     <Trending />
+                </div>
+                <div className="w-4/6 flex flex-col mt-20">
+                    <p className="text-4xl font-extrabold text-textPurple self-center ">
+                        Discount Item
+                    </p>
+                    <div className="flex">
+                        <div className="w-1/2 flex flex-col justify-center">
+                            <p className="text-4xl text-textPurple font-extrabold">
+                                20% Discount Of All Products
+                            </p>
+                            <p className="text-pink text-xl font-medium mt-4 mb-5">
+                                Eams Sofa Compact
+                            </p>
+                            <p className="text-base text-discountDescText mb-7">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eu eget
+                                feugiat habitasse nec, bibendum condimentum.
+                            </p>
+                            <div className="flex">
+                                <div>
+                                    {checkText('Material expose like metals')}
+                                    {checkText('Simple neutral colours')}
+                                </div>
+                                <div className="ml-10">
+                                    {checkText('Clear lines and geomatric figures')}
+                                    {checkText('Material expose like metals')}
+                                </div>
+                            </div>
+                            <button
+                                type="button"
+                                className="w-52 h-14 rounded bg-pink text-white text-base font-bold mt-10">
+                                Shop Now
+                            </button>
+                        </div>
+                        <div className="w-1/2">
+                            <img className="" src="/img/discount.png" alt="discount" />
+                        </div>
+                    </div>
+                </div>
+                <div className="w-4/6 flex flex-col mt-20">
+                    <p className="text-4xl font-extrabold text-textPurple self-center mb-12">
+                        Top Categories
+                    </p>
                 </div>
             </div>
             <Footer />

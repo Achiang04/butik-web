@@ -55,24 +55,26 @@ const Featured = () => {
                                     'bg-cardBg h-60 w-64 flex items-center justify-center',
                                     isHover && 'bg-featuredHoverBg'
                                 )}>
-                                <div className="relative -top-24 -left-24 ml-2">
-                                    <div className="flex">
-                                        <button className="hover:bg-footerBg h-7 w-7 rounded-full flex items-center justify-center">
-                                            <img
-                                                className="w-4 h-4"
-                                                src="/img/cart_icon_purple.png"
-                                                alt="listImage"
-                                            />
-                                        </button>
-                                        <button className="hover:bg-footerBg h-7 w-7 rounded-full flex items-center justify-center">
-                                            <img
-                                                className="w-4 h-4 fill-blueGradient"
-                                                src="/img/heart_icon.png"
-                                                alt="listImage"
-                                            />
-                                        </button>
+                                {isHover && (
+                                    <div className="relative -top-24 -left-24 ml-2">
+                                        <div className="flex">
+                                            <button className="hover:bg-footerBg h-7 w-7 rounded-full flex items-center justify-center">
+                                                <img
+                                                    className="w-4 h-4"
+                                                    src="/img/cart_icon_purple.png"
+                                                    alt="listImage"
+                                                />
+                                            </button>
+                                            <button className="hover:bg-footerBg h-7 w-7 rounded-full flex items-center justify-center">
+                                                <img
+                                                    className="w-4 h-4 fill-blueGradient"
+                                                    src="/img/heart_icon.png"
+                                                    alt="listImage"
+                                                />
+                                            </button>
+                                        </div>
                                     </div>
-                                </div>
+                                )}
                                 <img
                                     className="w-44 absolute mt-3 h-44"
                                     src={e.img}

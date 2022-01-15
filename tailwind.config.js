@@ -76,7 +76,9 @@ module.exports = {
                 unique2BulletBg: '#2B2BF5',
                 unique3BulletBg: '#2BF5CC',
                 uniqueBulletText: '#ACABC3',
-                trendingBg: '#F5F6F8'
+                trendingBg: '#F5F6F8',
+                tredingBottomProductBg: '#FFF6FB',
+                discountDescText: '#B7BACB'
             },
             width: {
                 '5p': '5%',
@@ -94,6 +96,7 @@ module.exports = {
                 '90p': '90%',
                 '95p': '95%',
                 85: '22rem',
+                106: '26rem',
                 110: '28rem',
                 120: '30rem',
                 140: '35rem',
