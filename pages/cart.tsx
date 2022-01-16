@@ -58,8 +58,8 @@ const Cart = () => {
     const router = useRouter();
     const [curtData, setCurtData] = useState(productData);
 
-    const handleOrderComplete = useCallback(() => {
-        router.push('/order_complete');
+    const goToPayment = useCallback(() => {
+        router.push('/upload');
     }, []);
 
     const handleClearCurt = useCallback(() => {
@@ -182,7 +182,7 @@ const Cart = () => {
                                     {renderPrice}
                                     <button
                                         type="button"
-                                        onClick={handleOrderComplete}
+                                        onClick={goToPayment}
                                         className="w-full py-3 mt-8 bg-proceedButton text-white text-sm rounded font-bold">
                                         Proceed To Checkout
                                     </button>

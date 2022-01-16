@@ -64,10 +64,10 @@ const Categories = () => {
                             </div>
                             <div
                                 className={clsx(
-                                    'flex flex-col items-center w-full',
+                                    'flex flex-col items-center w-full text-textPurple',
                                     isHover && '-mt-2'
                                 )}>
-                                <p className="mt-3.5 text-lg font-bol">{e.title}</p>
+                                <p className="mt-3.5 text-lg font-medium">{e.title}</p>
                                 <div className="flex text-sm font-medium">
                                     <p className="mr-2.5">Rp.{e.price}</p>
                                 </div>
