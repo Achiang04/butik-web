@@ -1,7 +1,8 @@
+import clsx from 'clsx';
 import Footer from 'components/Footer';
 import Header from 'components/Header';
-import BaseInput from 'components/input/BaseInput';
 import TextAreaComponent from 'components/input/TextAreaComponent';
+import TextInput from 'components/input/TextInput';
 import { Formik } from 'formik';
 import Head from 'next/head';
 import React, { useCallback, useState } from 'react';
@@ -29,6 +30,22 @@ const validationSchemaPassword = Yup.object().shape({
         .oneOf([Yup.ref('password'), null], 'Passwords not match')
 });
 
+const valuesAccount = {
+    first_name: '',
+    last_name: '',
+    email: '',
+    phone: '',
+    city: '',
+    address: '',
+    bio: ''
+};
+
+const valuesPassword = {
+    currentPassword: '',
+    newPassword: '',
+    confirmNewPassword: ''
+};
+
 const Profile = () => {
     const [status, setStatus] = useState('account');
 
@@ -39,22 +56,6 @@ const Profile = () => {
     const handleChangeToPassword = useCallback(() => {
         setStatus('password');
     }, []);
-
-    const valuesAccount = {
-        first_name: '',
-        last_name: '',
-        email: '',
-        phone: '',
-        city: '',
-        address: '',
-        bio: ''
-    };
-
-    const valuesPassword = {
-        currentPassword: '',
-        newPassword: '',
-        confirmNewPassword: ''
-    };
 
     return (
         <Formik
@@ -88,7 +89,10 @@ const Profile = () => {
                                     </div>
                                     <div className="flex flex-col self-start items-start w-full">
                                         <button
-                                            className="py-3 border-t border-b w-full"
+                                            className={clsx(
+                                                'py-3 border-t border-b w-full hover:bg-cardBg',
+                                                status === 'account' && 'bg-cardBg'
+                                            )}
                                             type="button"
                                             onClick={handleChangeToAccount}>
                                             <p className="text-softGray text-base font-semibold">
@@ -96,7 +100,10 @@ const Profile = () => {
                                             </p>
                                         </button>
                                         <button
-                                            className="py-3 border-t border-b w-full mb-10"
+                                            className={clsx(
+                                                'py-3 border-t border-b w-full mb-10 hover:bg-cardBg',
+                                                status === 'password' && 'bg-cardBg'
+                                            )}
                                             type="button"
                                             onClick={handleChangeToPassword}>
                                             <p className="text-softGray text-base font-semibold">
@@ -111,44 +118,50 @@ const Profile = () => {
                                             <p className="text-2xl font-bold">Account Settings</p>
                                             <div className="flex mt-5">
                                                 <div className="w-1/2 mr-5">
-                                                    <BaseInput
-                                                        placeholder="First Name"
+                                                    <TextInput
+                                                        label="First Name"
+                                                        placeholder="John"
                                                         type="text"
                                                         name="first_name"
                                                         withFormik
                                                     />
-                                                    <div className="my-5">
-                                                        <BaseInput
-                                                            placeholder="Email"
+                                                    <div className="my-2">
+                                                        <TextInput
+                                                            label="Email"
+                                                            placeholder="example@mail.com"
                                                             type="email"
                                                             name="email"
                                                             withFormik
                                                         />
                                                     </div>
-                                                    <BaseInput
-                                                        placeholder="City"
+                                                    <TextInput
+                                                        label="City"
+                                                        placeholder="Batam"
                                                         type="text"
                                                         name="city"
                                                         withFormik
                                                     />
                                                 </div>
                                                 <div className="w-1/2 ml-5">
-                                                    <BaseInput
-                                                        placeholder="Last Name"
+                                                    <TextInput
+                                                        label="Last Name"
+                                                        placeholder="Doe"
                                                         type="text"
                                                         name="last_name"
                                                         withFormik
                                                     />
-                                                    <div className="my-5">
-                                                        <BaseInput
-                                                            placeholder="Phone"
+                                                    <div className="my-2">
+                                                        <TextInput
+                                                            label="Phone"
+                                                            placeholder="+6282387410597"
                                                             type="number"
                                                             name="phone"
                                                             withFormik
                                                         />
                                                     </div>
-                                                    <BaseInput
-                                                        placeholder="Address"
+                                                    <TextInput
+                                                        label="Address"
+                                                        placeholder="Jl. Bukit Indah Raya I No. 26, Sukajadi"
                                                         type="text"
                                                         name="address"
                                                         withFormik
@@ -176,22 +189,25 @@ const Profile = () => {
                                             <p className="text-2xl font-bold mb-5">
                                                 Change Password
                                             </p>
-                                            <BaseInput
-                                                placeholder="Password"
+                                            <TextInput
+                                                label="Current Password"
+                                                placeholder="Enter your current password"
                                                 type="password"
                                                 name="password"
                                                 withFormik
                                             />
-                                            <div className="my-5">
-                                                <BaseInput
-                                                    placeholder="Confirm Password"
+                                            <div className="my-2">
+                                                <TextInput
+                                                    label="New Password"
+                                                    placeholder="Enter your new password"
                                                     type="password"
                                                     name="confirmPassword"
                                                     withFormik
                                                 />
                                             </div>
-                                            <BaseInput
-                                                placeholder="Password"
+                                            <TextInput
+                                                label="Confirm New Password"
+                                                placeholder="Enter your confirm new password"
                                                 type="password"
                                                 name="password"
                                                 withFormik

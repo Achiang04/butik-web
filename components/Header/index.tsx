@@ -1,3 +1,4 @@
+import { PencilIcon } from '@heroicons/react/solid';
 import Link from 'next/link';
 import React from 'react';
 
@@ -32,6 +33,11 @@ const Header = () => {
                         </div>
                     </div>
                     <div className="flex">
+                        <Link href="/admin">
+                            <div className="border border-pink rounded bg-pink shadow-md px-1.5 py-1.5 mr-2 flex items-center cursor-pointer">
+                                <PencilIcon className="w-6 h-6 text-white" aria-hidden="true" />
+                            </div>
+                        </Link>
                         <Link href="/profile">
                             <div className="border border-pink rounded bg-pink shadow-md px-1.5 py-1.5 mr-2 flex items-center cursor-pointer">
                                 <img className="w-6 h-6" src="/img/user_icon.png" alt="icon" />

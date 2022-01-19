@@ -62,18 +62,18 @@ const Upload = () => {
 
             <div className="flex flex-col items-center py-24">
                 <div className="w-4/6 mt-20 flex flex-col items-center">
-                    <div className="box">
+                    <div className="box w-180">
                         <h2 className="text-2xl self-center font-extrabold mb-5">Upload Payment</h2>
 
                         <div
                             ref={wrapperRef}
-                            className="drop-file-input"
+                            className="drop-file-input h-72"
                             onDragEnter={onDragEnter}
                             onDragLeave={onDragLeave}
                             onDrop={onDrop}>
                             <div className="drop-file-input__label text-softGray text-base">
                                 <img src="/img/upload.png" alt="icon" />
-                                <p>Drag and Drop your files here</p>
+                                <p>Drag and Drop your file here</p>
                             </div>
                             <input type="file" value="" onChange={onFileDrop} />
                         </div>
