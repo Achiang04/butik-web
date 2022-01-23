@@ -2,13 +2,10 @@ import clsx from 'clsx';
 import AllProductForm from 'components/Admin/AllProductForm';
 import DiscountProductForm from 'components/Admin/DiscountProductForm';
 import HeaderProductForm from 'components/Admin/HeaderProductForm';
-import TrendingProductForm from 'components/Admin/TrendingProductForm';
 import UnqiueProductForm from 'components/Admin/UnqiueProductForm';
 import React, { useCallback, useState } from 'react';
 
-// all, featured, leatest, categories
-
-const Admin = () => {
+const AddProduct = () => {
     const [status, setStatus] = useState('allProduct');
 
     const handleChangeToAll = useCallback(() => {
@@ -23,10 +20,6 @@ const Admin = () => {
         setStatus('unique');
     }, []);
 
-    const handleChangeToTrending = useCallback(() => {
-        setStatus('trending');
-    }, []);
-
     const handleChangeToDiscount = useCallback(() => {
         setStatus('discount');
     }, []);
@@ -39,8 +32,6 @@ const Admin = () => {
                 return <HeaderProductForm />;
             case 'unique':
                 return <UnqiueProductForm />;
-            case 'trending':
-                return <TrendingProductForm />;
             case 'discount':
                 return <DiscountProductForm />;
         }
@@ -81,15 +72,6 @@ const Admin = () => {
                     <button
                         className={clsx(
                             'py-1 border border-borderGray w-full hover:bg-cardBg rounded-md mr-3',
-                            status === 'trending' && 'bg-cardBg'
-                        )}
-                        type="button"
-                        onClick={handleChangeToTrending}>
-                        <p className="text-base">Trending Product</p>
-                    </button>
-                    <button
-                        className={clsx(
-                            'py-1 border border-borderGray w-full hover:bg-cardBg rounded-md mr-3',
                             status === 'discount' && 'bg-cardBg'
                         )}
                         type="button"
@@ -103,6 +85,6 @@ const Admin = () => {
     );
 };
 
-Admin.defaultProps = {};
+AddProduct.defaultProps = {};
 
-export default React.memo(Admin);
+export default React.memo(AddProduct);

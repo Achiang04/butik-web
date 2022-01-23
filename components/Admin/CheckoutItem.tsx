@@ -6,6 +6,7 @@ const data = [
         name: 'Vel elit euismod',
         color: 'White',
         quantity: 2,
+        size: 'XL',
         price: '13.000',
         buyer: 'bambang',
         buyerPhoneNumber: '081234567890'
@@ -15,6 +16,7 @@ const data = [
         name: 'Vel elit euismod',
         color: 'White',
         quantity: 2,
+        size: 'XL',
         price: '13.000',
         buyer: 'bambang',
         buyerPhoneNumber: '081234567890'
@@ -24,6 +26,7 @@ const data = [
         name: 'Vel elit euismod',
         color: 'White',
         quantity: 2,
+        size: 'XL',
         price: '13.000',
         buyer: 'bambang',
         buyerPhoneNumber: '081234567890'
@@ -33,6 +36,7 @@ const data = [
         name: 'Vel elit euismod',
         color: 'White',
         quantity: 2,
+        size: 'XL',
         price: '13.000',
         buyer: 'bambang',
         buyerPhoneNumber: '081234567890'
@@ -42,6 +46,7 @@ const data = [
         name: 'Vel elit euismod',
         color: 'White',
         quantity: 2,
+        size: 'XL',
         price: '13.000',
         buyer: 'bambang',
         buyerPhoneNumber: '081234567890'
@@ -55,11 +60,10 @@ const CheckoutItem = () => {
             <table className="w-full">
                 <thead>
                     <tr className="flex text-xl text-textDarkPurple mb-10">
-                        <th className="w-2/6 flex">Product</th>
-                        <th className="w-1/6 flex">Color</th>
-                        <th className="w-1/6 flex">Quantity</th>
-                        <th className="w-1/6 flex">Total Price</th>
-                        <th className="w-1/6 flex">Buyer</th>
+                        <th className="w-2/5 flex">Product</th>
+                        <th className="w-1/5 flex">Quantity</th>
+                        <th className="w-1/5 flex">Price</th>
+                        <th className="w-1/5 flex">Buyer</th>
                     </tr>
                 </thead>
 
@@ -74,19 +78,26 @@ const CheckoutItem = () => {
                             <tr
                                 key={i}
                                 className="flex  w-full bg-white shadow-md p-3 items-center mt-5 rounded">
-                                <td className="flex items-center w-2/6">
+                                <td className="flex items-center w-2/5">
                                     <img className="w-20 h-20" src={e.img} alt="product" />
-                                    <p className="ml-5">{e.name}</p>
+                                    <div className="ml-3">
+                                        <p className="text-sm">{e.name}</p>
+                                        <p className="text-sm text-textProductCartGray">
+                                            Color: {e.color}
+                                        </p>
+                                        <p className="text-xs text-textProductCartGray">
+                                            Size: {e.size}
+                                        </p>
+                                    </div>
                                 </td>
-                                <td className="w-1/6 flex">{e.color}</td>
-                                <td className="w-1/6 flex">{e.quantity}</td>
-                                <td className="w-1/6 flex flex-col">
+                                <td className="w-1/5 flex">{e.quantity}</td>
+                                <td className="w-1/5 flex flex-col">
                                     <p>Rp. {formatTotalPrice}</p>
                                     <p className="text-sm text-softGray">Rp. {e.price} / pcs</p>
                                 </td>
-                                <td className="w-1/6 flex flex-col">
+                                <td className="w-1/5 flex flex-col">
                                     <p>{e.buyer}</p>
-                                    <p>
+                                    <p className="text-sm text-softGray">
                                         {e.buyerPhoneNumber.replace(
                                             /(\d{4})\D?(\d{4})\D?(\d{4})/,
                                             '$1 $2 $3'

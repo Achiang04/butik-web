@@ -82,7 +82,7 @@ const Favourite = () => {
             <div className="flex flex-col items-center pt-24">
                 <div className="w-4/6 my-20">
                     <p className="text-2xl font-bold mb-5">Favourite</p>
-                    <ShopCardItem data={productData} cardOnClick={handleCardClick} />
+                    <ShopCardItem data={productData} cardOnClick={handleCardClick} isRemove />
                 </div>
             </div>
 
