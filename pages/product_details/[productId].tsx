@@ -67,6 +67,10 @@ const relatedProductData = [
 const ProductDetails = () => {
     return (
         <>
+            <Head>
+                <title>Butik</title>
+            </Head>
+
             <Header />
 
             <div className="flex flex-col items-center pt-24 mb-20">

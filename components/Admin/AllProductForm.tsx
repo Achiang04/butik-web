@@ -25,7 +25,6 @@ const ImageConfig = {
 const AllProduct = () => {
     const wrapperRef = useRef(null);
     const [fileList, setFileList] = useState([]);
-    console.log('🚀 ~ file: AllProductForm.tsx ~ line 23 ~ AllProduct ~ fileList', fileList);
 
     const onDragEnter = useCallback(
         () => wrapperRef.current.classList.add('dragover'),

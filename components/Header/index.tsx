@@ -1,8 +1,10 @@
-import { PencilIcon } from '@heroicons/react/solid';
+import UserDropdown from 'components/Dropdown/UserDropdown';
 import Link from 'next/link';
 import React from 'react';
 
 import HeaderMenu from './HeaderMenu';
+
+const dropdownData = ['Profile', 'Favourite', 'Admin'];
 
 const Header = () => {
     return (
@@ -21,9 +23,9 @@ const Header = () => {
                 <div className="flex w-4/6 justify-between">
                     <div className="flex items-center">
                         <Link href="/home">
-                            <p className="text-4xl text-textBlack font-extrabold cursor-pointer">
+                            <a className="text-4xl text-textBlack font-extrabold cursor-pointer">
                                 Butik
-                            </p>
+                            </a>
                         </Link>
                         <div className="flex ml-20">
                             <HeaderMenu text="Home" location="/home" />
@@ -32,21 +34,14 @@ const Header = () => {
                             <HeaderMenu text="Contact" location="/contact" />
                         </div>
                     </div>
-                    <div className="flex">
-                        <Link href="/admin">
-                            <div className="border border-pink rounded bg-pink shadow-md px-1.5 py-1.5 mr-2 flex items-center cursor-pointer">
-                                <PencilIcon className="w-6 h-6 text-white" aria-hidden="true" />
-                            </div>
-                        </Link>
-                        <Link href="/profile">
-                            <div className="border border-pink rounded bg-pink shadow-md px-1.5 py-1.5 mr-2 flex items-center cursor-pointer">
-                                <img className="w-6 h-6" src="/img/user_icon.png" alt="icon" />
-                            </div>
-                        </Link>
+                    <div className="flex items-center">
+                        <UserDropdown data={dropdownData} />
                         <Link href="/cart">
-                            <div className="border border-pink rounded bg-pink shadow-md px-1.5 py-1.5 flex items-center cursor-pointer">
-                                <img className="w-6 h-6" src="/img/cart_icon.png" alt="icon" />
-                            </div>
+                            <a>
+                                <div className="border border-pink rounded bg-pink shadow-md px-1.5 py-1.5 flex items-center cursor-pointer">
+                                    <img className="w-6 h-6" src="/img/cart_icon.png" alt="icon" />
+                                </div>
+                            </a>
                         </Link>
                     </div>
                 </div>

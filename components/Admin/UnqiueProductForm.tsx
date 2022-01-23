@@ -142,7 +142,7 @@ const UniqueProduct = () => {
                                     <div key={i} className="flex items-center">
                                         <div className="w-full">
                                             <TextInput
-                                                label="List Description"
+                                                label={`List Description ${i + 1}`}
                                                 placeholder="Enter your product description"
                                                 type="text"
                                                 name={`description${i + 1}`}

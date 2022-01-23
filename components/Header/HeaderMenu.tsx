@@ -14,13 +14,13 @@ const HeaderMenu = (props: Props) => {
 
     return (
         <Link href={location}>
-            <p
+            <a
                 className={clsx(
                     'mr-9 hover:text-pink cursor-pointer text-base',
                     active ? 'text-pink' : 'text-textBlack'
                 )}>
                 {text}
-            </p>
+            </a>
         </Link>
     );
 };
