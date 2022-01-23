@@ -45,6 +45,24 @@ const data = [
         size: 'XL',
         price: '13.000',
         active: false
+    },
+    {
+        id: 6,
+        img: '/img/image1.png',
+        name: 'Vel elit euismod',
+        color: 'White',
+        size: 'XL',
+        price: '13.000',
+        active: false
+    },
+    {
+        id: 7,
+        img: '/img/image1.png',
+        name: 'Vel elit euismod',
+        color: 'White',
+        size: 'XL',
+        price: '13.000',
+        active: false
     }
 ];
 
@@ -53,20 +71,21 @@ const ChooseLeatest = () => {
 
     const handleActiveProduct = useCallback(
         (id) => () => {
-            console.log('handleActiveProduct');
+            const checkActive = collectionData.filter((e) => e.active);
             const temp = collectionData.find((e) => e.id === id);
             const tempIndex = collectionData.findIndex((e) => e.id === id);
-            const newData = { ...temp, active: true };
-            const newCollectionData = [...collectionData];
-            newCollectionData[tempIndex] = newData;
-            setCollectionData(newCollectionData);
+            if (checkActive.length <= 5) {
+                const newData = { ...temp, active: true };
+                const newCollectionData = [...collectionData];
+                newCollectionData[tempIndex] = newData;
+                setCollectionData(newCollectionData);
+            }
         },
         [collectionData]
     );
 
     const handleDisactiveProduct = useCallback(
         (id) => () => {
-            console.log('handleDisactiveProduct');
             const temp = collectionData.find((e) => e.id === id);
             const tempIndex = collectionData.findIndex((e) => e.id === id);
             const newData = { ...temp, active: false };

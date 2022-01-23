@@ -8,7 +8,8 @@ const data = [
         color: 'White',
         size: 'XL',
         price: '13.000',
-        active: false
+        firstLine: false,
+        secondLine: false
     },
     {
         id: 2,
@@ -17,7 +18,8 @@ const data = [
         color: 'White',
         size: 'XL',
         price: '13.000',
-        active: false
+        firstLine: false,
+        secondLine: false
     },
     {
         id: 3,
@@ -26,7 +28,8 @@ const data = [
         color: 'White',
         size: 'XL',
         price: '13.000',
-        active: false
+        firstLine: false,
+        secondLine: false
     },
     {
         id: 4,
@@ -35,7 +38,8 @@ const data = [
         color: 'White',
         size: 'XL',
         price: '13.000',
-        active: false
+        firstLine: false,
+        secondLine: false
     },
     {
         id: 5,
@@ -44,19 +48,36 @@ const data = [
         color: 'White',
         size: 'XL',
         price: '13.000',
-        active: false
+        firstLine: false,
+        secondLine: false
     }
 ];
 
 const ChooseTrending = () => {
     const [collectionData, setCollectionData] = useState(data);
 
-    const handleActiveProduct = useCallback(
+    const handleActiveFirstLineProduct = useCallback(
         (id) => () => {
-            console.log('handleActiveProduct');
+            const checkActive = collectionData.filter((e) => e.firstLine);
             const temp = collectionData.find((e) => e.id === id);
             const tempIndex = collectionData.findIndex((e) => e.id === id);
-            const newData = { ...temp, active: true };
+            if (!temp.secondLine) {
+                if (checkActive.length <= 3) {
+                    const newData = { ...temp, firstLine: true };
+                    const newCollectionData = [...collectionData];
+                    newCollectionData[tempIndex] = newData;
+                    setCollectionData(newCollectionData);
+                }
+            }
+        },
+        [collectionData]
+    );
+
+    const handleDisactiveFirstLineProduct = useCallback(
+        (id) => () => {
+            const temp = collectionData.find((e) => e.id === id);
+            const tempIndex = collectionData.findIndex((e) => e.id === id);
+            const newData = { ...temp, firstLine: false };
             const newCollectionData = [...collectionData];
             newCollectionData[tempIndex] = newData;
             setCollectionData(newCollectionData);
@@ -64,12 +85,28 @@ const ChooseTrending = () => {
         [collectionData]
     );
 
-    const handleDisactiveProduct = useCallback(
+    const handleActiveSecondLineProduct = useCallback(
         (id) => () => {
-            console.log('handleDisactiveProduct');
+            const checkActive = collectionData.filter((e) => e.secondLine);
             const temp = collectionData.find((e) => e.id === id);
             const tempIndex = collectionData.findIndex((e) => e.id === id);
-            const newData = { ...temp, active: false };
+            if (!temp.firstLine) {
+                if (checkActive.length <= 2) {
+                    const newData = { ...temp, secondLine: true };
+                    const newCollectionData = [...collectionData];
+                    newCollectionData[tempIndex] = newData;
+                    setCollectionData(newCollectionData);
+                }
+            }
+        },
+        [collectionData]
+    );
+
+    const handleDisactiveSecondLineProduct = useCallback(
+        (id) => () => {
+            const temp = collectionData.find((e) => e.id === id);
+            const tempIndex = collectionData.findIndex((e) => e.id === id);
+            const newData = { ...temp, secondLine: false };
             const newCollectionData = [...collectionData];
             newCollectionData[tempIndex] = newData;
             setCollectionData(newCollectionData);
@@ -83,9 +120,10 @@ const ChooseTrending = () => {
                 <table className="w-full">
                     <thead>
                         <tr className="flex text-xl text-textDarkPurple mb-10">
-                            <th className="w-2/4 flex">Product</th>
-                            <th className="w-1/4 flex">Price</th>
-                            <th className="w-1/4 flex">Select</th>
+                            <th className="w-2/5 flex">Product</th>
+                            <th className="w-1/5 flex">Price</th>
+                            <th className="w-1/5 flex">First Line</th>
+                            <th className="w-1/5 flex">Second Line</th>
                         </tr>
                     </thead>
 
@@ -95,7 +133,7 @@ const ChooseTrending = () => {
                                 <tr
                                     key={i}
                                     className="flex  w-full bg-white shadow-md p-3 items-center mt-5 rounded">
-                                    <td className="flex items-center w-2/4">
+                                    <td className="flex items-center w-2/5">
                                         <img className="w-20 h-20" src={e.img} alt="product" />
                                         <div className="ml-3">
                                             <p className="text-sm">{e.name}</p>
@@ -107,17 +145,28 @@ const ChooseTrending = () => {
                                             </p>
                                         </div>
                                     </td>
-                                    <td className="w-1/4 flex">
+                                    <td className="w-1/5 flex">
                                         <p className="text-sm text-softGray">Rp. {e.price}</p>
                                     </td>
-                                    <td>
+                                    <td className="w-1/5 flex">
                                         <input
                                             type="checkbox"
-                                            checked={e.active}
+                                            checked={e.firstLine}
                                             onChange={
-                                                e.active
-                                                    ? handleDisactiveProduct(e.id)
-                                                    : handleActiveProduct(e.id)
+                                                e.firstLine
+                                                    ? handleDisactiveFirstLineProduct(e.id)
+                                                    : handleActiveFirstLineProduct(e.id)
+                                            }
+                                        />
+                                    </td>
+                                    <td className="w-1/5 flex">
+                                        <input
+                                            type="checkbox"
+                                            checked={e.secondLine}
+                                            onChange={
+                                                e.secondLine
+                                                    ? handleDisactiveSecondLineProduct(e.id)
+                                                    : handleActiveSecondLineProduct(e.id)
                                             }
                                         />
                                     </td>

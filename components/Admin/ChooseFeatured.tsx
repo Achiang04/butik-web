@@ -53,20 +53,21 @@ const ChooseFeatured = () => {
 
     const handleActiveProduct = useCallback(
         (id) => () => {
-            console.log('handleActiveProduct');
+            const checkActive = collectionData.filter((e) => e.active);
             const temp = collectionData.find((e) => e.id === id);
-            const tempIndex = collectionData.findIndex((e) => e.id === id);
-            const newData = { ...temp, active: true };
-            const newCollectionData = [...collectionData];
-            newCollectionData[tempIndex] = newData;
-            setCollectionData(newCollectionData);
+            if (checkActive.length <= 3) {
+                const tempIndex = collectionData.findIndex((e) => e.id === id);
+                const newData = { ...temp, active: true };
+                const newCollectionData = [...collectionData];
+                newCollectionData[tempIndex] = newData;
+                setCollectionData(newCollectionData);
+            }
         },
         [collectionData]
     );
 
     const handleDisactiveProduct = useCallback(
         (id) => () => {
-            console.log('handleDisactiveProduct');
             const temp = collectionData.find((e) => e.id === id);
             const tempIndex = collectionData.findIndex((e) => e.id === id);
             const newData = { ...temp, active: false };
