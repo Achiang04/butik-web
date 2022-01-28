@@ -1,12 +1,12 @@
 import ResetPasswordForm from 'components/Form/ResetPasswordForm';
-import { useRouter } from 'next/dist/client/router';
+// import { useRouter } from 'next/dist/client/router';
 import Head from 'next/head';
 import React from 'react';
 
 const ResetPassword = () => {
-    const router = useRouter();
-    const token = router.query.token?.toString();
-    const email = router.query.email?.toString();
+    // const router = useRouter();
+    // const token = router.query.token?.toString();
+    // const email = router.query.email?.toString();
 
     return (
         <>

@@ -2,6 +2,7 @@ import clsx from 'clsx';
 import FormikWrapper from 'components/Formik/FormikWrapper';
 import React, { useCallback } from 'react';
 
+/* eslint-disable  @typescript-eslint/no-explicit-any */
 export interface TextAreaProps {
     name?: string;
     id?: string;

@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 import { isNil } from 'ramda';
-import React, { useCallback, useState } from 'react';
+import React from 'react';
 
 const TrendingData = [
     {

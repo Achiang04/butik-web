@@ -62,8 +62,7 @@ const HeaderProduct = () => {
                 description: ''
             }}
             validationSchema={validationSchema}>
-            {(props) => {
-                const { handleSubmit, isSubmitting } = props;
+            {() => {
                 return (
                     <div>
                         <div className="flex items-center">

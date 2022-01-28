@@ -9,7 +9,7 @@ import React, { useCallback, useEffect, useState } from 'react';
 export interface Props {}
 
 const Home = () => {
-    const [session]: [any, boolean] = useSession();
+    const [session] = useSession();
     const [status, setStatus] = useState('login');
     const router = useRouter();
 

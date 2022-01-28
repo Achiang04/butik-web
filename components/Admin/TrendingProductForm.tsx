@@ -132,8 +132,7 @@ const TrendingProduct = () => {
                 collection_subtitle: ''
             }}
             validationSchema={validationSchema}>
-            {(props) => {
-                const { handleSubmit, isSubmitting } = props;
+            {() => {
                 return (
                     <div>
                         <p className="text-2xl font-bold mb-5">Add Trending Collection</p>
@@ -177,7 +176,7 @@ const TrendingProduct = () => {
                                                 <button
                                                     type="button"
                                                     className="drop-file-preview__item__del"
-                                                    onClick={() => fileRemove(item)}>
+                                                    onClick={fileRemove}>
                                                     x
                                                 </button>
                                             </div>

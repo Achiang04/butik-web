@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import TextAreaComponent from 'components/input/TextAreaComponent';
+// import TextAreaComponent from 'components/input/TextAreaComponent';
 import TextInput from 'components/input/TextInput';
 import { Formik } from 'formik';
 import React, { useCallback, useRef, useState } from 'react';
@@ -71,8 +71,8 @@ const UniqueProduct = () => {
                 description3: ''
             }}
             validationSchema={validationSchema}>
-            {(props) => {
-                const { handleSubmit, isSubmitting } = props;
+            {() => {
+                // const { handleSubmit, isSubmitting } = props;
                 return (
                     <div>
                         <div className="flex items-center">

@@ -35,6 +35,7 @@ const ResetPasswordForm = ({ email }: Props) => {
             }}
             validationSchema={validationSchema}>
             {(props) => {
+                /* eslint-disable react/prop-types */
                 const { handleSubmit, isSubmitting } = props;
                 return (
                     <div className="w-screen h-screen flex justify-center items-center bg-white">

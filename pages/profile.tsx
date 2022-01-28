@@ -67,7 +67,8 @@ const Profile = () => {
                 status === 'account' ? validationSchemaAccount : validationSchemaPassword
             }>
             {(props) => {
-                const { handleSubmit, isSubmitting } = props;
+                /* eslint-disable react/prop-types */
+                const { isSubmitting } = props;
                 return (
                     <>
                         <Head>

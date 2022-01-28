@@ -11,7 +11,9 @@ export interface ContactProps {}
 
 const validationSchema = Yup.object().shape({
     email: Yup.string().required('Email is Required').email('Email is not valid'),
-    password: Yup.string().required('Password is Required').min(8)
+    name: Yup.string().required('Name is Required'),
+    subject: Yup.string().required('Subject is Required'),
+    message: Yup.string().required('Message is Required')
 });
 
 const Contact = () => {

@@ -73,8 +73,8 @@ const AllProduct = () => {
                 description: ''
             }}
             validationSchema={validationSchema}>
-            {(props) => {
-                const { handleSubmit, isSubmitting } = props;
+            {() => {
+                // const { handleSubmit, isSubmitting } = props;
                 return (
                     <div>
                         <div className="flex items-center">

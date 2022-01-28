@@ -1,5 +1,6 @@
 {
     "name": "butik-web",
+    "homepage": "http://ummifira.alverouz.com/",
     "version": "0.1.0",
     "private": true,
     "scripts": {
@@ -11,7 +12,8 @@
         "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc",
         "postinstall": "rimraf ./.husky && husky install && husky add .husky/pre-commit \"npm run lint-staged\"",
         "plop": "plop",
-        "deploy": "next build && next start"
+        "deploy": "next build && next start",
+        "export": "next export"
     },
     "husky": {
         "hooks": {

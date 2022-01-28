@@ -3,6 +3,7 @@ import { isNil } from 'ramda';
 import React from 'react';
 import Fade from 'react-reveal/Fade';
 
+/* eslint-disable  @typescript-eslint/no-explicit-any */
 export interface FieldProps<Val = any> {
     field: FieldInputProps<Val>;
     meta: FieldMetaProps<Val>;

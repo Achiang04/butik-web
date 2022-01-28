@@ -1,5 +1,5 @@
 import FeaturesCard from 'components/Card/FeaturesCard';
-import CarouselComponent from 'components/Carousel/CarouselComponent';
+// import CarouselComponent from 'components/Carousel/CarouselComponent';
 import Footer from 'components/Footer';
 import Header from 'components/Header';
 import Head from 'next/head';
@@ -63,12 +63,12 @@ const About = () => {
                     </div>
                 </div>
 
-                <div className="w-full bg-aboutClientBg flex justify-center mb-32">
+                {/* <div className="w-full bg-aboutClientBg flex justify-center mb-32">
                     <div className="w-4/6 flex flex-col items-center my-10 mx-auto">
                         <p className="text-4xl font-extrabold">Our Client Say!</p>
-                        {/* <CarouselComponent /> */}
+                        <CarouselComponent />
                     </div>
-                </div>
+                </div> */}
             </div>
 
             <Footer />
